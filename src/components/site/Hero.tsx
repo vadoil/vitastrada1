@@ -13,11 +13,11 @@ export const Hero = () => {
       id="top"
       className="relative h-[100svh] min-h-[760px] w-full overflow-hidden bg-bone noise"
     >
-      {/* Background image — luxury editorial, model on the right */}
+      {/* Background image — luxury editorial, model visible on all viewports */}
       <motion.img
         src={heroImage}
         alt="Контрактный пошив одежды для брендов — Atelier Noir, Москва"
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 h-full w-full object-cover object-[70%_center] md:object-center"
         width={1920}
         height={1080}
         initial={{ scale: 1.08, opacity: 0 }}
@@ -25,10 +25,13 @@ export const Hero = () => {
         transition={{ duration: 2.4, ease }}
       />
 
-      {/* Left wash — typography breathing room */}
-      <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-bone via-bone/70 to-transparent" />
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bone/80 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-bone via-bone/40 to-transparent" />
+      {/* Mobile: subtle bottom-up wash so model stays visible behind text */}
+      <div className="md:hidden absolute inset-0 bg-gradient-to-b from-bone via-bone/55 to-bone/85" />
+
+      {/* Desktop: left wash — typography breathing room */}
+      <div className="hidden md:block absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-bone via-bone/70 to-transparent" />
+      <div className="hidden md:block absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bone/80 to-transparent" />
+      <div className="hidden md:block absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-bone via-bone/40 to-transparent" />
 
       {/* Animated identity guides — corner crosshair marks */}
       <div className="pointer-events-none absolute inset-6 md:inset-10 hidden md:block">
