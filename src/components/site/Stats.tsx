@@ -58,7 +58,7 @@ export const Stats = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-hairline border border-hairline">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px">
           {STATS.map((s, i) => (
             <motion.div
               key={i}
