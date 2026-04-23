@@ -110,9 +110,9 @@
   }
 
   .text-editorial-xl {
-    font-size: clamp(3.5rem, 11vw, 12rem);
-    line-height: 0.9;
-    letter-spacing: -0.05em;
+    font-size: clamp(2.75rem, 8.4vw, 9rem);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
     font-weight: 300;
   }
 
