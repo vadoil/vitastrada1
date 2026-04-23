@@ -162,7 +162,7 @@ export const Categories = () => {
         </div>
 
         {/* Editorial grid — explicit row heights so cards perfectly fill, no empty space */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 md:[grid-template-rows:34rem_28rem_24rem]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 md:[grid-template-rows:42rem_32rem_26rem]">
           {/* Row 1 — wide hero + tall companion (both share row height) */}
           <div className="md:col-span-8 md:row-start-1">
             <Card c={CATEGORIES[0]} />
