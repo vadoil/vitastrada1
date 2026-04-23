@@ -73,12 +73,12 @@ const CATEGORIES: Category[] = [
 ];
 
 const Card = ({ c }: { c: Category }) => {
-  const aspect =
-    c.size === "lg" ? "aspect-[4/5] md:aspect-[5/6]" : "aspect-[4/5]";
+  // Mobile keeps aspect to avoid 0-height. Desktop fills the grid row.
+  const mobileAspect = c.size === "lg" ? "aspect-[4/5]" : "aspect-[4/5]";
 
   return (
-    <article className="group relative bg-ink-soft overflow-hidden cursor-pointer">
-      <div className={`relative w-full overflow-hidden ${aspect}`}>
+    <article className={`group relative bg-ink-soft overflow-hidden cursor-pointer ${mobileAspect} md:aspect-auto md:h-full md:min-h-[480px]`}>
+      <div className="absolute inset-0 overflow-hidden">
         <img
           src={c.image}
           alt={c.title}
