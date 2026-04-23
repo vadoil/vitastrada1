@@ -99,7 +99,7 @@ export const Hero = () => {
               </div>
             </motion.div>
 
-            {/* HEADLINE — UTP first */}
+            {/* HEADLINE — AIDA: Attention */}
             <h1 className="text-editorial-xl text-ink font-display max-w-[1100px]">
               <motion.span
                 className="block"
@@ -107,7 +107,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5, ease }}
               >
-                Шьём одежду
+                Контрактный пошив
               </motion.span>
               <motion.span
                 className="block"
@@ -115,12 +115,13 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.7, ease }}
               >
-                для брендов{" "}
-                <span className="italic font-light text-ink/55">под ключ</span>
+                для{" "}
+                <span className="italic font-light text-ink/55">premium</span>{" "}
+                брендов
               </motion.span>
             </h1>
 
-            {/* Tagline — secondary */}
+            {/* Tagline — Interest: подкрепление эмоцией */}
             <motion.p
               className="mt-8 md:mt-10 text-ink/60 text-base md:text-xl font-display tracking-tight max-w-2xl"
               initial={{ opacity: 0 }}
@@ -130,7 +131,7 @@ export const Hero = () => {
               <span className="italic">«То, что носят с гордостью.»</span>
             </motion.p>
 
-            {/* Sub + CTA */}
+            {/* Sub + CTA — Desire + Action */}
             <div className="mt-10 md:mt-14 grid grid-cols-12 gap-6 items-end">
               <motion.p
                 className="col-span-12 md:col-span-7 text-ink/75 text-base md:text-lg leading-relaxed"
@@ -138,7 +139,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 1.1, ease }}
               >
-                Контрактное производство полного цикла: от лекала до отгрузки. Партии от 30 единиц. Премиальные ткани. Сложные конструкции. Личное сопровождение технолога.
+                Полный цикл производства: лекало, образец, отшив, контроль качества, отгрузка. Партии от 30 единиц. Премиальные ткани. Сложные конструкции. Личный технолог на проекте.
               </motion.p>
 
               <motion.div
