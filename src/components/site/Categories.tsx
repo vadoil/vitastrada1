@@ -83,7 +83,7 @@ const Card = ({ c }: { c: Category }) => {
           src={c.image}
           alt={c.title}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
+          className="h-full w-full object-cover object-top transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
         />
         {/* base gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
