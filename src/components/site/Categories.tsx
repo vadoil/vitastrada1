@@ -83,7 +83,7 @@ const Card = ({ c }: { c: Category }) => {
           src={c.image}
           alt={c.title}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
+          className="h-full w-full object-cover object-top transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
         />
         {/* base gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
@@ -162,7 +162,7 @@ export const Categories = () => {
         </div>
 
         {/* Editorial grid — explicit row heights so cards perfectly fill, no empty space */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 md:[grid-template-rows:34rem_28rem_24rem]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 md:[grid-template-rows:42rem_32rem_26rem]">
           {/* Row 1 — wide hero + tall companion (both share row height) */}
           <div className="md:col-span-8 md:row-start-1">
             <Card c={CATEGORIES[0]} />
