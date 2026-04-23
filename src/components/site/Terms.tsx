@@ -25,7 +25,7 @@ export const Terms = () => {
             <div className="mt-12 inline-flex items-center gap-6">
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-4 bg-bone text-ink px-7 py-4 text-overline hover:bg-gold transition-colors duration-500"
+                className="btn-stitched group inline-flex items-center gap-4 bg-bone text-ink px-7 py-4 text-overline hover:bg-gold transition-colors duration-500"
               >
                 Получить расчёт
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="group-hover:translate-x-1 transition-transform duration-500">
