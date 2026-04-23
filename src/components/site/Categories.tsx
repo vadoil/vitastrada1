@@ -73,12 +73,12 @@ const CATEGORIES: Category[] = [
 ];
 
 const Card = ({ c }: { c: Category }) => {
-  const aspect =
-    c.size === "lg" ? "aspect-[4/5] md:aspect-[5/6]" : "aspect-[4/5]";
+  // Mobile keeps aspect to avoid 0-height. Desktop fills the grid row.
+  const mobileAspect = c.size === "lg" ? "aspect-[4/5]" : "aspect-[4/5]";
 
   return (
-    <article className="group relative bg-ink-soft overflow-hidden cursor-pointer">
-      <div className={`relative w-full overflow-hidden ${aspect}`}>
+    <article className={`group relative bg-ink-soft overflow-hidden cursor-pointer ${mobileAspect} md:aspect-auto md:h-full md:min-h-[480px]`}>
+      <div className="absolute inset-0 overflow-hidden">
         <img
           src={c.image}
           alt={c.title}
@@ -161,29 +161,29 @@ export const Categories = () => {
           </div>
         </div>
 
-        {/* Editorial grid: 2 / 1+1 / 1+1 */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4">
-          {/* Row 1 — wide hero card + tall card */}
-          <div className="md:col-span-8">
+        {/* Editorial grid — explicit row heights so cards perfectly fill, no empty space */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 md:[grid-template-rows:34rem_28rem_24rem]">
+          {/* Row 1 — wide hero + tall companion (both share row height) */}
+          <div className="md:col-span-8 md:row-start-1">
             <Card c={CATEGORIES[0]} />
           </div>
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 md:row-start-1">
             <Card c={CATEGORIES[1]} />
           </div>
 
           {/* Row 2 — three equal */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 md:row-start-2">
             <Card c={CATEGORIES[2]} />
           </div>
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 md:row-start-2">
             <Card c={CATEGORIES[3]} />
           </div>
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 md:row-start-2">
             <Card c={CATEGORIES[4]} />
           </div>
 
-          {/* Row 3 — full bleed */}
-          <div className="md:col-span-12">
+          {/* Row 3 — full bleed wide */}
+          <div className="md:col-span-12 md:row-start-3">
             <Card c={CATEGORIES[5]} />
           </div>
         </div>
