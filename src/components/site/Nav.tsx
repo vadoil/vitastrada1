@@ -24,11 +24,12 @@ export const Nav = () => {
       <div className="container-editorial flex items-center justify-between py-5">
         <a
           href="#top"
-          className={`font-display text-base tracking-[0.2em] transition-colors duration-500 ${
+          className={`group inline-flex items-center gap-3 font-display text-base tracking-[0.2em] transition-colors duration-500 ${
             onLight ? "text-ink" : "text-bone"
           }`}
         >
-          ATELIER<span className="text-gold">·</span>NOIR
+          <Monogram className="w-7 h-7 transition-transform duration-700 group-hover:rotate-180" />
+          <span>ATELIER<span className="text-gold">·</span>NOIR</span>
         </a>
 
         <nav
