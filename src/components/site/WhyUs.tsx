@@ -1,4 +1,7 @@
+import { motion } from "framer-motion";
 import atelier from "@/assets/atelier-hands.jpg";
+import { RotatingBadge } from "@/components/brand/RotatingBadge";
+import { Compass } from "@/components/brand/Compass";
 
 const REASONS = [
   { n: "01", title: "Один менеджер на проект", text: "Не call-центр, а технолог-партнёр, который ведёт коллекцию от лекала до отгрузки." },
@@ -9,22 +12,33 @@ const REASONS = [
   { n: "06", title: "NDA по умолчанию", text: "Все макеты, лекала и образцы остаются вашей интеллектуальной собственностью." },
 ];
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export const WhyUs = () => {
   return (
-    <section className="bg-ink-soft py-28 md:py-40">
-      <div className="container-editorial">
+    <section className="bg-ink-soft py-28 md:py-40 relative overflow-hidden">
+      {/* Decorative compass */}
+      <Compass className="absolute top-10 right-10 text-gold/30 hidden md:block" size={120} />
+
+      <div className="container-editorial relative">
         <div className="grid grid-cols-12 gap-10 lg:gap-16">
           {/* Left: image */}
           <div className="col-span-12 lg:col-span-5">
             <div className="sticky top-32">
-              <div className="aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[3/4] overflow-hidden">
                 <img
                   src={atelier}
                   alt="Atelier Noir — production"
                   loading="lazy"
                   className="h-full w-full object-cover animate-slow-zoom"
                 />
+                {/* Floating rotating badge */}
+                <RotatingBadge
+                  className="absolute -bottom-10 -right-10 text-bone bg-ink-soft rounded-full"
+                  size={130}
+                />
               </div>
+
               <div className="mt-6 flex items-start justify-between">
                 <div>
                   <div className="text-overline text-bone">— 004</div>
@@ -45,16 +59,28 @@ export const WhyUs = () => {
             </h2>
 
             <div className="divide-y divide-hairline border-y border-hairline">
-              {REASONS.map((r) => (
-                <div key={r.n} className="grid grid-cols-12 gap-4 py-8 group hover:bg-ink/40 transition-colors duration-500 -mx-4 px-4">
-                  <div className="col-span-2 text-overline text-gold">{r.n}</div>
+              {REASONS.map((r, i) => (
+                <motion.div
+                  key={r.n}
+                  className="grid grid-cols-12 gap-4 py-8 group hover:bg-ink/40 transition-colors duration-500 -mx-4 px-4 cursor-default"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.7, delay: i * 0.06, ease }}
+                >
+                  <div className="col-span-2 text-overline text-gold flex items-center gap-2">
+                    <span className="inline-block h-px w-3 bg-gold transition-all duration-500 group-hover:w-6" />
+                    {r.n}
+                  </div>
                   <div className="col-span-10 md:col-span-4">
-                    <h3 className="text-bone text-lg md:text-xl">{r.title}</h3>
+                    <h3 className="text-bone text-lg md:text-xl transition-transform duration-500 group-hover:translate-x-2">
+                      {r.title}
+                    </h3>
                   </div>
                   <p className="col-span-12 md:col-span-6 text-bone-dim text-base leading-relaxed">
                     {r.text}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
