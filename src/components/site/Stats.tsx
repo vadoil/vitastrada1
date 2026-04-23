@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { useReveal } from "@/hooks/use-reveal";
+import { Compass } from "@/components/brand/Compass";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 const STATS = [
   { value: 11, suffix: "", label: "лет на рынке", caption: "С 2014 года" },
