@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Monogram } from "@/components/brand/Monogram";
 
 export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
