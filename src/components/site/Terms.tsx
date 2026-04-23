@@ -11,11 +11,12 @@ export const Terms = () => {
   return (
     <section className="bg-ink-soft py-28 md:py-40 border-t border-hairline">
       <div className="container-editorial">
-        <div className="grid grid-cols-12 gap-10">
+        <div className="grid grid-cols-12 gap-10 lg:gap-16">
           <div className="col-span-12 lg:col-span-5">
             <div className="text-overline text-gold mb-6">— 008</div>
-            <h2 className="text-editorial-lg text-bone font-display mb-10">
-              Условия <span className="italic text-bone-dim">сотрудничества</span>
+            <h2 className="text-editorial-md text-bone font-display mb-10 break-words hyphens-auto">
+              Условия<br />
+              <span className="italic text-bone-dim">сотрудничества</span>
             </h2>
             <p className="text-bone-dim text-lg leading-relaxed max-w-md">
               Прозрачные условия, понятный документооборот, фиксированные сроки. Договор — основа, а не формальность.
