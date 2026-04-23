@@ -107,6 +107,26 @@ export default {
           "0%": { transform: "scaleX(0)" },
           "100%": { transform: "scaleX(1)" },
         },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "float-y": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
+        "stitch": {
+          "0%": { strokeDashoffset: "200" },
+          "100%": { strokeDashoffset: "0" },
+        },
+        "pulse-ring": {
+          "0%": { transform: "scale(0.95)", opacity: "0.7" },
+          "100%": { transform: "scale(1.6)", opacity: "0" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -115,6 +135,11 @@ export default {
         "fade-in": "fade-in 1.2s var(--ease-out-expo) both",
         "slow-zoom": "slow-zoom 18s ease-out infinite alternate",
         "draw-line": "draw-line 1.4s var(--ease-out-expo) both",
+        "spin-slow": "spin-slow 28s linear infinite",
+        "float-y": "float-y 5s ease-in-out infinite",
+        "stitch": "stitch 2.4s var(--ease-out-expo) both",
+        "pulse-ring": "pulse-ring 2.4s cubic-bezier(0.22,1,0.36,1) infinite",
+        "shimmer": "shimmer 3s linear infinite",
       },
     },
   },
