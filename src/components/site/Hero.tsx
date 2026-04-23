@@ -13,11 +13,11 @@ export const Hero = () => {
       id="top"
       className="relative h-[100svh] min-h-[760px] w-full overflow-hidden bg-bone noise"
     >
-      {/* Background image — luxury editorial, model on the right */}
+      {/* Background image — luxury editorial, model visible on all viewports */}
       <motion.img
         src={heroImage}
         alt="Контрактный пошив одежды для брендов — Atelier Noir, Москва"
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 h-full w-full object-cover object-[70%_center] md:object-center"
         width={1920}
         height={1080}
         initial={{ scale: 1.08, opacity: 0 }}
@@ -25,10 +25,13 @@ export const Hero = () => {
         transition={{ duration: 2.4, ease }}
       />
 
-      {/* Left wash — typography breathing room */}
-      <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-bone via-bone/70 to-transparent" />
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bone/80 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-bone via-bone/40 to-transparent" />
+      {/* Mobile: subtle bottom-up wash so model stays visible behind text */}
+      <div className="md:hidden absolute inset-0 bg-gradient-to-b from-bone via-bone/55 to-bone/85" />
+
+      {/* Desktop: left wash — typography breathing room */}
+      <div className="hidden md:block absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-bone via-bone/70 to-transparent" />
+      <div className="hidden md:block absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bone/80 to-transparent" />
+      <div className="hidden md:block absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-bone via-bone/40 to-transparent" />
 
       {/* Animated identity guides — corner crosshair marks */}
       <div className="pointer-events-none absolute inset-6 md:inset-10 hidden md:block">
@@ -96,7 +99,7 @@ export const Hero = () => {
               </div>
             </motion.div>
 
-            {/* HEADLINE — UTP first */}
+            {/* HEADLINE — AIDA: Attention */}
             <h1 className="text-editorial-xl text-ink font-display max-w-[1100px]">
               <motion.span
                 className="block"
@@ -104,7 +107,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5, ease }}
               >
-                Шьём одежду
+                Контрактный пошив
               </motion.span>
               <motion.span
                 className="block"
@@ -112,12 +115,13 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.7, ease }}
               >
-                для брендов{" "}
-                <span className="italic font-light text-ink/55">под ключ</span>
+                для{" "}
+                <span className="italic font-light text-ink/55">premium</span>{" "}
+                брендов
               </motion.span>
             </h1>
 
-            {/* Tagline — secondary */}
+            {/* Tagline — Interest: подкрепление эмоцией */}
             <motion.p
               className="mt-8 md:mt-10 text-ink/60 text-base md:text-xl font-display tracking-tight max-w-2xl"
               initial={{ opacity: 0 }}
@@ -127,7 +131,7 @@ export const Hero = () => {
               <span className="italic">«То, что носят с гордостью.»</span>
             </motion.p>
 
-            {/* Sub + CTA */}
+            {/* Sub + CTA — Desire + Action */}
             <div className="mt-10 md:mt-14 grid grid-cols-12 gap-6 items-end">
               <motion.p
                 className="col-span-12 md:col-span-7 text-ink/75 text-base md:text-lg leading-relaxed"
@@ -135,7 +139,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 1.1, ease }}
               >
-                Контрактное производство полного цикла: от лекала до отгрузки. Партии от 30 единиц. Премиальные ткани. Сложные конструкции. Личное сопровождение технолога.
+                Полный цикл производства: лекало, образец, отшив, контроль качества, отгрузка. Партии от 30 единиц. Премиальные ткани. Сложные конструкции. Личный технолог на проекте.
               </motion.p>
 
               <motion.div
