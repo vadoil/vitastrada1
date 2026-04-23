@@ -197,4 +197,69 @@
     51% { transform: scaleX(1); transform-origin: right; }
     100% { transform: scaleX(0); transform-origin: right; }
   }
+
+  /* ───── Golden stitch divider — между секциями ───── */
+  .gold-stitch {
+    position: relative;
+    height: 28px;
+    width: 100%;
+  }
+  .gold-stitch::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--gold)) 0,
+      hsl(var(--gold)) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    background-size: 20px 1px;
+    background-repeat: repeat-x;
+    background-position: center;
+    opacity: 0.85;
+  }
+  .gold-stitch::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: hsl(var(--gold));
+    opacity: 0.95;
+  }
+
+  @keyframes stitch-flow {
+    from { background-position-x: 0; }
+    to   { background-position-x: 40px; }
+  }
+  .gold-stitch-animated::before {
+    animation: stitch-flow 4s linear infinite;
+  }
+
+  /* ───── Stitched button — золотые стежки по периметру ───── */
+  .btn-stitched {
+    position: relative;
+  }
+  .btn-stitched::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    pointer-events: none;
+    background:
+      linear-gradient(to right,  hsl(var(--gold)) 50%, transparent 50%) top    / 8px 1px repeat-x,
+      linear-gradient(to right,  hsl(var(--gold)) 50%, transparent 50%) bottom / 8px 1px repeat-x,
+      linear-gradient(to bottom, hsl(var(--gold)) 50%, transparent 50%) left   / 1px 8px repeat-y,
+      linear-gradient(to bottom, hsl(var(--gold)) 50%, transparent 50%) right  / 1px 8px repeat-y;
+    opacity: 0.55;
+    transition: opacity 0.5s var(--ease-out-expo), inset 0.5s var(--ease-out-expo);
+  }
+  .btn-stitched:hover::before,
+  .btn-stitched:focus-visible::before {
+    opacity: 1;
+    inset: 3px;
+  }
 }
