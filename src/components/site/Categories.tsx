@@ -199,7 +199,7 @@ export const Categories = () => {
           <div className="col-span-12 md:col-span-5 md:col-start-8 flex md:justify-end">
             <a
               href="#contact"
-              className="group inline-flex items-center gap-4 bg-bone text-ink px-7 py-4 text-overline hover:bg-gold transition-colors duration-500"
+              className="btn-stitched group inline-flex items-center gap-4 bg-bone text-ink px-7 py-4 text-overline hover:bg-gold transition-colors duration-500"
             >
               Обсудить проект
               <svg

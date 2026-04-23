@@ -150,7 +150,7 @@ export const Hero = () => {
               >
                 <a
                   href="#contact"
-                  className="group relative inline-flex items-center gap-4 bg-ink text-bone px-8 py-5 text-overline overflow-hidden"
+                  className="btn-stitched group relative inline-flex items-center gap-4 bg-ink text-bone px-8 py-5 text-overline overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gold translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                   <span className="relative">Запросить расчёт</span>

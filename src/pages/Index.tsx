@@ -12,6 +12,7 @@ import { Trust } from "@/components/site/Trust";
 import { Journal } from "@/components/site/Journal";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { GoldStitchDivider } from "@/components/brand/GoldStitchDivider";
 
 const Index = () => {
   return (
@@ -19,15 +20,25 @@ const Index = () => {
       <Nav />
       <Hero />
       <Marquee />
+      <GoldStitchDivider />
       <Stats />
+      <GoldStitchDivider />
       <Categories />
+      <GoldStitchDivider />
       <WhyUs />
+      <GoldStitchDivider />
       <Standards />
+      <GoldStitchDivider />
       <Equipment />
+      <GoldStitchDivider />
       <Process />
+      <GoldStitchDivider />
       <Terms />
+      <GoldStitchDivider />
       <Trust />
+      <GoldStitchDivider />
       <Journal />
+      <GoldStitchDivider />
       <Contact />
       <Footer />
     </main>

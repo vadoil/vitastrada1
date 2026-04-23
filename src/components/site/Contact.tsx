@@ -95,7 +95,7 @@ export const Contact = () => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full group bg-bone text-ink py-6 text-overline hover:bg-gold transition-colors duration-500 flex items-center justify-center gap-4 disabled:opacity-50"
+                className="btn-stitched w-full group bg-bone text-ink py-6 text-overline hover:bg-gold transition-colors duration-500 flex items-center justify-center gap-4 disabled:opacity-50"
               >
                 {submitting ? "Отправляем…" : "Отправить заявку"}
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="group-hover:translate-x-1 transition-transform duration-500">
