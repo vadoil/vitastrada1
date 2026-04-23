@@ -6,21 +6,21 @@ export const Hero = () => {
       id="top"
       className="relative h-[100svh] min-h-[720px] w-full overflow-hidden bg-bone noise"
     >
-      {/* Background image — luxury editorial, model anchored to right */}
+      {/* Background image — luxury editorial, model on the right */}
       <img
         src={heroImage}
         alt="Премиальный пошив одежды для брендов — ателье Atelier Noir"
-        className="absolute inset-0 h-full w-full object-cover object-right md:object-[75%_center]"
+        className="absolute inset-0 h-full w-full object-cover object-center"
         width={1920}
         height={1080}
       />
 
-      {/* Left fade — gives text breathing room over the bone backdrop */}
-      <div className="absolute inset-y-0 left-0 w-full md:w-3/4 bg-gradient-to-r from-bone via-bone/85 md:via-bone/70 to-transparent" />
+      {/* Subtle left wash to deepen typography contrast on wide screens */}
+      <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-bone/40 to-transparent" />
       {/* Soft top fade for nav legibility */}
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bone/80 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-bone/70 to-transparent" />
       {/* Bottom fade for caption legibility */}
-      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-bone via-bone/60 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-bone via-bone/50 to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 container-editorial h-full flex flex-col">
