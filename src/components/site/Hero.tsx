@@ -72,14 +72,13 @@ export const Hero = () => {
           </motion.div>
 
           <motion.div
-            className="hidden md:flex items-center gap-3 text-overline text-bone-dim"
+            className="hidden md:flex flex-col items-end gap-1 text-overline text-bone-dim leading-tight"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.55, ease }}
           >
-            <span>55.7558° N · 37.6173° E</span>
-            <span className="text-gold/50">|</span>
-            <span>Москва</span>
+            <span className="text-bone">Москва</span>
+            <span className="text-bone-dim/70 text-[0.6rem] tracking-[0.3em]">55.7558° N · 37.6173° E</span>
           </motion.div>
         </div>
 
