@@ -156,11 +156,11 @@ export const Categories = () => {
           </div>
           <div className="col-span-12 md:col-span-9">
             <h2 className="text-editorial-lg text-bone font-display max-w-4xl">
-              Что мы <span className="italic text-bone-dim">шьём</span>
+              Что мы <span className="italic text-gold">шьём</span>
             </h2>
             <div className="mt-10 grid grid-cols-12 gap-6">
               <p className="col-span-12 md:col-span-7 text-bone-dim text-base md:text-lg leading-relaxed">
-                Шесть направлений — от архитектурной верхней одежды до премиального джерси. Специализация на сложных конструкциях и работе с деликатными люксовыми тканями: Loro Piana, Drago, итальянский шёлк, шотландский кашемир.
+                Семь направлений — от архитектурной верхней одежды и премиального джерси до couture-капсул для собак. Работаем с люксовыми тканями: Loro Piana, Drago, итальянский шёлк, шотландский кашемир. Сложные конструкции и деликатные материалы — наша территория.
               </p>
               <div className="col-span-12 md:col-span-4 md:col-start-9">
                 <div className="hairline mb-4" />
@@ -171,9 +171,8 @@ export const Categories = () => {
           </div>
         </div>
 
-        {/* Editorial grid — explicit row heights so cards perfectly fill, no empty space */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 md:[grid-template-rows:42rem_32rem_26rem]">
-          {/* Row 1 — wide hero + tall companion (both share row height) */}
+        {/* Editorial grid — 7 cards across 4 rows */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 md:[grid-template-rows:42rem_32rem_26rem_38rem]">
           <div className="md:col-span-8 md:row-start-1">
             <Card c={CATEGORIES[0]} />
           </div>
@@ -181,7 +180,6 @@ export const Categories = () => {
             <Card c={CATEGORIES[1]} />
           </div>
 
-          {/* Row 2 — three equal */}
           <div className="md:col-span-4 md:row-start-2">
             <Card c={CATEGORIES[2]} />
           </div>
@@ -192,9 +190,13 @@ export const Categories = () => {
             <Card c={CATEGORIES[4]} />
           </div>
 
-          {/* Row 3 — full bleed wide */}
           <div className="md:col-span-12 md:row-start-3">
             <Card c={CATEGORIES[5]} />
+          </div>
+
+          {/* Couture для собак — full-width hero */}
+          <div className="md:col-span-12 md:row-start-4">
+            <Card c={CATEGORIES[6]} />
           </div>
         </div>
 

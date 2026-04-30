@@ -4,11 +4,11 @@ export const Footer = () => {
       <div className="container-editorial py-16">
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-12 md:col-span-6">
-            <div className="font-display text-2xl tracking-[0.15em] text-bone mb-4">
-              ATELIER<span className="text-gold">·</span>NOIR
+            <div className="font-display text-3xl tracking-[0.12em] text-bone mb-4">
+              NOVA <span className="text-gold italic">&amp;</span> STRADA
             </div>
             <p className="text-bone-dim text-sm max-w-sm">
-              Контрактное швейное производство премиум-класса. Москва.
+              Контрактное швейное производство премиум-класса. Одежда для брендов и couture для собак. Москва.
             </p>
           </div>
 
@@ -25,7 +25,7 @@ export const Footer = () => {
           <div className="col-span-6 md:col-span-2">
             <div className="text-overline text-bone-dim mb-4">Контакт</div>
             <ul className="space-y-2 text-bone text-sm">
-              <li><a href="mailto:hello@ateliernoir.ru" className="link-underline">hello@ateliernoir.ru</a></li>
+              <li><a href="mailto:hello@novastrada.ru" className="link-underline">hello@novastrada.ru</a></li>
               <li><a href="tel:+74950000000" className="link-underline font-mono">+7 495 000 00 00</a></li>
             </ul>
           </div>
@@ -43,7 +43,7 @@ export const Footer = () => {
         <div className="hairline mt-16 mb-6" />
 
         <div className="flex flex-wrap items-center justify-between gap-4 text-overline text-bone-dim">
-          <div>© {new Date().getFullYear()} Atelier Noir. Все права защищены.</div>
+          <div>© {new Date().getFullYear()} Nova &amp; Strada. Все права защищены.</div>
           <div className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
             Принимаем заявки
