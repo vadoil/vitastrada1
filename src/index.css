@@ -9,50 +9,54 @@
 
 @layer base {
   :root {
-    /* Core palette — глубокий чёрный + кремовый акцент */
-    --background: 0 0% 5%;
-    --foreground: 38 30% 92%;
+    /* Core palette — глубокий винный шёлк + золото (Nova & Strada) */
+    --background: 350 55% 14%;
+    --foreground: 40 60% 88%;
 
-    --card: 0 0% 7%;
-    --card-foreground: 38 30% 92%;
+    --card: 350 50% 11%;
+    --card-foreground: 40 60% 88%;
 
-    --popover: 0 0% 5%;
-    --popover-foreground: 38 30% 92%;
+    --popover: 350 55% 12%;
+    --popover-foreground: 40 60% 88%;
 
-    --primary: 38 38% 88%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 42 60% 62%;
+    --primary-foreground: 350 55% 10%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 38 30% 92%;
+    --secondary: 350 50% 18%;
+    --secondary-foreground: 40 60% 88%;
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 38 8% 58%;
+    --muted: 350 35% 18%;
+    --muted-foreground: 40 25% 70%;
 
-    --accent: 36 45% 70%;
-    --accent-foreground: 0 0% 5%;
+    --accent: 42 65% 60%;
+    --accent-foreground: 350 55% 10%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 38 30% 92%;
+    --destructive-foreground: 40 60% 88%;
 
-    --border: 38 8% 18%;
-    --input: 0 0% 12%;
-    --ring: 36 45% 70%;
+    --border: 350 35% 24%;
+    --input: 350 40% 16%;
+    --ring: 42 65% 60%;
 
     --radius: 0;
 
-    /* Editorial tokens */
-    --ink: 0 0% 5%;
-    --ink-soft: 0 0% 9%;
-    --bone: 38 30% 92%;
-    --bone-dim: 38 15% 75%;
-    --hairline: 38 8% 18%;
-    --gold: 36 45% 70%;
+    /* Editorial tokens — wine silk + couture gold */
+    --ink: 350 55% 10%;
+    --ink-soft: 350 50% 14%;
+    --bone: 40 60% 88%;
+    --bone-dim: 40 25% 72%;
+    --hairline: 350 30% 26%;
+    --gold: 42 65% 60%;
+    --gold-soft: 42 55% 70%;
+    --wine: 350 60% 22%;
+    --wine-deep: 350 65% 12%;
 
-    /* Gradients */
-    --gradient-noir: linear-gradient(180deg, hsl(0 0% 3%) 0%, hsl(0 0% 7%) 100%);
-    --gradient-fade-bottom: linear-gradient(180deg, hsl(0 0% 5% / 0) 0%, hsl(0 0% 5% / 0.95) 100%);
-    --gradient-fade-top: linear-gradient(180deg, hsl(0 0% 5% / 0.7) 0%, hsl(0 0% 5% / 0) 100%);
-    --gradient-vignette: radial-gradient(ellipse at center, transparent 40%, hsl(0 0% 0% / 0.6) 100%);
+    /* Gradients — wine silk */
+    --gradient-noir: linear-gradient(180deg, hsl(350 65% 10%) 0%, hsl(350 55% 16%) 100%);
+    --gradient-fade-bottom: linear-gradient(180deg, hsl(350 65% 10% / 0) 0%, hsl(350 65% 10% / 0.95) 100%);
+    --gradient-fade-top: linear-gradient(180deg, hsl(350 65% 10% / 0.7) 0%, hsl(350 65% 10% / 0) 100%);
+    --gradient-vignette: radial-gradient(ellipse at center, transparent 40%, hsl(350 80% 5% / 0.7) 100%);
+    --gradient-silk: radial-gradient(ellipse at 30% 20%, hsl(350 55% 22%) 0%, hsl(350 65% 11%) 60%, hsl(350 75% 7%) 100%);
 
     /* Shadows */
     --shadow-soft: 0 1px 0 hsl(38 30% 92% / 0.04);
@@ -62,14 +66,14 @@
     --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 38 30% 92%;
-    --sidebar-primary: 36 45% 70%;
-    --sidebar-primary-foreground: 0 0% 5%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 38 30% 92%;
-    --sidebar-border: 38 8% 18%;
-    --sidebar-ring: 36 45% 70%;
+    --sidebar-background: 350 55% 12%;
+    --sidebar-foreground: 40 60% 88%;
+    --sidebar-primary: 42 65% 60%;
+    --sidebar-primary-foreground: 350 55% 10%;
+    --sidebar-accent: 350 50% 18%;
+    --sidebar-accent-foreground: 40 60% 88%;
+    --sidebar-border: 350 30% 26%;
+    --sidebar-ring: 42 65% 60%;
   }
 }
 
