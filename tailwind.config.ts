@@ -12,8 +12,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["'Montserrat Alternates'", "system-ui", "sans-serif"],
-        sans: ["'Montserrat Alternates'", "system-ui", "sans-serif"],
+        display: ["'Cormorant Garamond'", "'Times New Roman'", "serif"],
+        sans: ["'Montserrat'", "system-ui", "sans-serif"],
         mono: ["'JetBrains Mono'", "ui-monospace", "monospace"],
       },
       colors: {
