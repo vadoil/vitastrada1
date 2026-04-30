@@ -1,6 +1,9 @@
 type Props = { className?: string };
 
-/** Monogram A·N — used as identity mark. */
+/**
+ * NOVA & STRADA mark — couture butterfly knot composed of two thread loops
+ * tied at the center. Symbol of two threads, one master, one couture house.
+ */
 export const Monogram = ({ className = "" }: Props) => (
   <svg
     viewBox="0 0 64 64"
@@ -9,23 +12,43 @@ export const Monogram = ({ className = "" }: Props) => (
     className={className}
     aria-hidden
   >
-    <circle cx="32" cy="32" r="31" stroke="currentColor" strokeWidth="0.6" opacity="0.4" />
+    {/* Left wing — thread loop */}
     <path
-      d="M14 46 L26 18 L32 18 L26 32 M22 38 L34 38"
+      d="M32 32 C 18 18, 8 22, 8 32 C 8 42, 18 46, 32 32 Z"
       stroke="currentColor"
-      strokeWidth="1"
-      strokeLinecap="square"
+      strokeWidth="1.1"
+      fill="none"
       strokeLinejoin="miter"
+    />
+    {/* Right wing */}
+    <path
+      d="M32 32 C 46 18, 56 22, 56 32 C 56 42, 46 46, 32 32 Z"
+      stroke="currentColor"
+      strokeWidth="1.1"
+      fill="none"
+      strokeLinejoin="miter"
+    />
+    {/* Inner left filigree */}
+    <path
+      d="M30 32 C 22 24, 14 26, 14 32 C 14 38, 22 40, 30 32"
+      stroke="currentColor"
+      strokeWidth="0.5"
+      opacity="0.55"
       fill="none"
     />
+    {/* Inner right filigree */}
     <path
-      d="M36 46 L36 18 L38 18 L50 40 L50 18"
+      d="M34 32 C 42 24, 50 26, 50 32 C 50 38, 42 40, 34 32"
       stroke="currentColor"
-      strokeWidth="1"
-      strokeLinecap="square"
-      strokeLinejoin="miter"
+      strokeWidth="0.5"
+      opacity="0.55"
       fill="none"
     />
-    <circle cx="32" cy="55" r="0.8" fill="currentColor" />
+    {/* Central knot — vertical thread */}
+    <path d="M32 22 L32 42" stroke="currentColor" strokeWidth="1.1" />
+    <ellipse cx="32" cy="32" rx="2.4" ry="3.2" fill="currentColor" />
+    {/* Top accent dot */}
+    <circle cx="32" cy="18" r="0.9" fill="currentColor" />
+    <circle cx="32" cy="46" r="0.9" fill="currentColor" />
   </svg>
 );
