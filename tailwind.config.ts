@@ -56,6 +56,9 @@ export default {
         "bone-dim": "hsl(var(--bone-dim))",
         hairline: "hsl(var(--hairline))",
         gold: "hsl(var(--gold))",
+        "gold-soft": "hsl(var(--gold-soft))",
+        wine: "hsl(var(--wine))",
+        "wine-deep": "hsl(var(--wine-deep))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
