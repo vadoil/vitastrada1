@@ -13,25 +13,25 @@ export const Hero = () => {
       id="top"
       className="relative h-[100svh] min-h-[760px] w-full overflow-hidden bg-wine-deep noise"
     >
-      {/* Background — wine silk editorial */}
+      {/* Background — wine silk editorial. Contain on desktop so the whole gown fits. */}
       <motion.img
         src={heroImage}
         alt="Контрактный пошив одежды для премиум-брендов — Nova & Strada, Москва"
-        className="absolute inset-0 h-full w-full object-cover object-[68%_center] md:object-[60%_center]"
+        className="absolute inset-0 h-full w-full object-cover object-[78%_center] md:object-contain md:object-right"
         width={1920}
         height={1080}
-        initial={{ scale: 1.08, opacity: 0 }}
+        initial={{ scale: 1.04, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 2.4, ease }}
       />
 
-      {/* Mobile: wine wash from left/bottom keeps model visible at right */}
-      <div className="md:hidden absolute inset-0 bg-gradient-to-b from-wine-deep/80 via-wine-deep/30 to-wine-deep/85" />
+      {/* Mobile: subtle wine wash on left so headline reads over silk swirl */}
+      <div className="md:hidden absolute inset-0 bg-gradient-to-r from-wine-deep via-wine-deep/55 to-transparent" />
 
-      {/* Desktop: left wine wash for typography */}
-      <div className="hidden md:block absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-wine-deep via-wine-deep/75 to-transparent" />
-      <div className="hidden md:block absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-wine-deep/85 to-transparent" />
-      <div className="hidden md:block absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-wine-deep via-wine-deep/40 to-transparent" />
+      {/* Desktop: very soft left vignette — keep the silk wave visible */}
+      <div className="hidden md:block absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-wine-deep/85 via-wine-deep/35 to-transparent" />
+      <div className="hidden md:block absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-wine-deep/70 to-transparent" />
+      <div className="hidden md:block absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-wine-deep/80 to-transparent" />
 
       {/* Gold corner crosshair marks */}
       <div className="pointer-events-none absolute inset-6 md:inset-10 hidden md:block">
