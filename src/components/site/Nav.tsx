@@ -11,26 +11,24 @@ export const Nav = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Top of page sits on light hero → dark text. After scroll → dark glass + light text.
-  const onLight = !scrolled;
+  // Wine hero — always light text on top.
+  const onLight = false;
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-background/85 backdrop-blur-md border-b border-hairline"
+          ? "bg-wine-deep/80 backdrop-blur-md border-b border-hairline"
           : "bg-transparent"
       }`}
     >
       <div className="container-editorial flex items-center justify-between py-5">
         <a
           href="#top"
-          className={`group inline-flex items-center gap-3 font-display text-base tracking-[0.2em] transition-colors duration-500 ${
-            onLight ? "text-ink" : "text-bone"
-          }`}
+          className="group inline-flex items-center gap-3 font-display text-base md:text-lg tracking-[0.18em] text-bone transition-colors duration-500"
         >
-          <Monogram className="w-7 h-7 transition-transform duration-700 group-hover:rotate-180" />
-          <span>ATELIER<span className="text-gold">·</span>NOIR</span>
+          <Monogram className="w-8 h-8 text-gold transition-transform duration-700 group-hover:rotate-180" />
+          <span>NOVA <span className="text-gold italic">&</span> STRADA</span>
         </a>
 
         <nav
