@@ -4,6 +4,7 @@ import dresses from "@/assets/cat-dresses.jpg";
 import knitwear from "@/assets/cat-knitwear.jpg";
 import shirts from "@/assets/cat-shirts.jpg";
 import jersey from "@/assets/cat-jersey.jpg";
+import dogwear from "@/assets/cat-dogwear.jpg";
 
 type Category = {
   n: string;
@@ -68,6 +69,15 @@ const CATEGORIES: Category[] = [
     items: ["Худи", "Свитшоты", "Wide-pants", "Лонгсливы"],
     fabrics: "Хлопок 400 г/м² · Модал · Двунитка премиум",
     image: jersey,
+    size: "md",
+  },
+  {
+    n: "07",
+    title: "Couture для собак",
+    tagline: "От разработки до партии",
+    items: ["Пальто", "Тренчи", "Жилеты", "Свитеры", "Шлейки", "Аксессуары"],
+    fabrics: "Шерсть · Кашемир · Технические подкладки",
+    image: dogwear,
     size: "lg",
   },
 ];
