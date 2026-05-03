@@ -6,6 +6,7 @@ import { Categories } from "@/components/site/Categories";
 import { WhyUs } from "@/components/site/WhyUs";
 import { Standards } from "@/components/site/Standards";
 import { Equipment } from "@/components/site/Equipment";
+import { Patterns } from "@/components/site/Patterns";
 import { Process } from "@/components/site/Process";
 import { Terms } from "@/components/site/Terms";
 import { Trust } from "@/components/site/Trust";
@@ -30,6 +31,8 @@ const Index = () => {
       <Standards />
       <GoldStitchDivider />
       <Equipment />
+      <GoldStitchDivider />
+      <Patterns />
       <GoldStitchDivider />
       <Process />
       <GoldStitchDivider />
