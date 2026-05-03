@@ -54,8 +54,8 @@ export const WhyUs = () => {
 
           {/* Right: copy + reasons */}
           <div className="col-span-12 lg:col-span-7">
-            <h2 className="text-editorial-lg text-bone font-display mb-16 max-w-2xl">
-              Почему бренды <span className="italic text-bone-dim">остаются</span> с нами
+            <h2 className="text-editorial-lg text-bone font-display mb-16 max-w-2xl break-words hyphens-auto">
+              Почему бренды <span className="italic text-bone-dim">остаются</span> с&nbsp;нами
             </h2>
 
             <div className="divide-y divide-hairline border-y border-hairline">

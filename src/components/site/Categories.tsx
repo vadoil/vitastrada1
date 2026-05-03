@@ -4,7 +4,9 @@ import dresses from "@/assets/cat-dresses.jpg";
 import knitwear from "@/assets/cat-knitwear.jpg";
 import shirts from "@/assets/cat-shirts.jpg";
 import jersey from "@/assets/cat-jersey.jpg";
+import jerseyMobile from "@/assets/cat-jersey-mobile.jpg";
 import dogwear from "@/assets/cat-dogwear.jpg";
+import dogwearMobile from "@/assets/cat-dogwear-mobile.jpg";
 
 type Category = {
   n: string;
@@ -13,6 +15,7 @@ type Category = {
   items: string[];
   fabrics: string;
   image: string;
+  imageMobile?: string;
   size: "lg" | "md" | "sm";
 };
 
@@ -69,6 +72,7 @@ const CATEGORIES: Category[] = [
     items: ["Худи", "Свитшоты", "Wide-pants", "Лонгсливы"],
     fabrics: "Хлопок 400 г/м² · Модал · Двунитка премиум",
     image: jersey,
+    imageMobile: jerseyMobile,
     size: "md",
   },
   {
@@ -78,6 +82,7 @@ const CATEGORIES: Category[] = [
     items: ["Пальто", "Тренчи", "Жилеты", "Свитеры", "Шлейки", "Аксессуары"],
     fabrics: "Шерсть · Кашемир · Технические подкладки",
     image: dogwear,
+    imageMobile: dogwearMobile,
     size: "lg",
   },
 ];
@@ -89,12 +94,17 @@ const Card = ({ c }: { c: Category }) => {
   return (
     <article className={`group relative bg-ink-soft overflow-hidden cursor-pointer ${mobileAspect} md:aspect-auto md:h-full md:min-h-[480px]`}>
       <div className="absolute inset-0 overflow-hidden">
-        <img
-          src={c.image}
-          alt={c.title}
-          loading="lazy"
-          className="h-full w-full object-cover object-top transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
-        />
+        <picture>
+          {c.imageMobile && (
+            <source media="(max-width: 767px)" srcSet={c.imageMobile} />
+          )}
+          <img
+            src={c.image}
+            alt={c.title}
+            loading="lazy"
+            className="h-full w-full object-cover object-top transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
+          />
+        </picture>
         {/* base gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
         {/* gold sweep on hover */}
