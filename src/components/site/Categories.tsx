@@ -94,12 +94,17 @@ const Card = ({ c }: { c: Category }) => {
   return (
     <article className={`group relative bg-ink-soft overflow-hidden cursor-pointer ${mobileAspect} md:aspect-auto md:h-full md:min-h-[480px]`}>
       <div className="absolute inset-0 overflow-hidden">
-        <img
-          src={c.image}
-          alt={c.title}
-          loading="lazy"
-          className="h-full w-full object-cover object-top transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
-        />
+        <picture>
+          {c.imageMobile && (
+            <source media="(max-width: 767px)" srcSet={c.imageMobile} />
+          )}
+          <img
+            src={c.image}
+            alt={c.title}
+            loading="lazy"
+            className="h-full w-full object-cover object-top transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
+          />
+        </picture>
         {/* base gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
         {/* gold sweep on hover */}
