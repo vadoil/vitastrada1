@@ -182,7 +182,7 @@ export const Categories = () => {
         </div>
 
         {/* Editorial grid — 7 cards across 4 rows */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 md:[grid-template-rows:42rem_32rem_26rem_38rem]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 md:[grid-template-rows:42rem_32rem_34rem_38rem]">
           <div className="md:col-span-8 md:row-start-1">
             <Card c={CATEGORIES[0]} />
           </div>
