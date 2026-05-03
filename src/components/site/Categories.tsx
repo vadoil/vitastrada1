@@ -112,17 +112,17 @@ const Card = ({ c }: { c: Category }) => {
       </div>
 
       {/* Top meta */}
-      <div className="absolute top-6 left-6 right-6 md:top-8 md:left-8 md:right-8 flex items-start justify-between">
-        <span className="text-overline text-bone/80">№ {c.n}</span>
-        <span className="text-overline text-gold tracking-[0.4em]">
+      <div className="absolute top-5 left-5 right-5 md:top-8 md:left-8 md:right-8 grid grid-cols-[auto_minmax(0,1fr)] gap-3 items-start">
+        <span className="text-overline text-bone/80 whitespace-nowrap">№ {c.n}</span>
+        <span className="text-overline text-gold text-right break-words min-w-0">
           {c.tagline}
         </span>
       </div>
 
       {/* Bottom content */}
       <div className="absolute inset-x-0 bottom-0 p-6 md:p-10">
-        <div className="flex items-end justify-between gap-6 mb-4">
-          <h3 className="text-editorial-md text-bone font-display leading-[0.95]">
+        <div className="flex items-end justify-between gap-4 md:gap-6 mb-4 min-w-0">
+          <h3 className="text-editorial-md text-bone font-display leading-[0.95] min-w-0 break-words">
             {c.title}
           </h3>
           <span className="shrink-0 h-10 w-10 md:h-11 md:w-11 border border-bone/40 flex items-center justify-center transition-all duration-500 group-hover:bg-bone group-hover:text-ink group-hover:border-bone group-hover:rotate-45">
@@ -136,7 +136,7 @@ const Card = ({ c }: { c: Category }) => {
         <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-700 ease-out">
           <div className="overflow-hidden">
             <div className="pt-4 border-t border-bone/20">
-              <ul className="flex flex-wrap gap-x-5 gap-y-1.5 text-overline text-bone-dim mb-3">
+              <ul className="flex flex-wrap gap-x-4 gap-y-1.5 text-overline text-bone-dim mb-3">
                 {c.items.map((it) => (
                   <li key={it}>{it}</li>
                 ))}

@@ -31,7 +31,7 @@ export const CookieBanner = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-[60]"
+          className="fixed bottom-4 left-4 right-4 max-w-[calc(100vw-2rem)] md:left-auto md:right-6 md:bottom-6 md:max-w-md z-[60]"
           role="dialog"
           aria-label="Согласие на использование cookies"
         >
@@ -44,16 +44,16 @@ export const CookieBanner = () => {
               </Link>
               .
             </p>
-            <div className="flex gap-3">
+            <div className="grid grid-cols-2 gap-3">
               <button
                 onClick={accept}
-                className="flex-1 bg-bone text-ink py-3 text-overline hover:bg-gold transition-colors duration-500"
+                className="bg-bone text-ink py-3 px-2 text-overline hover:bg-gold transition-colors duration-500"
               >
                 Принять
               </button>
               <button
                 onClick={decline}
-                className="px-5 border border-hairline text-bone-dim py-3 text-overline hover:text-bone hover:border-bone-dim transition-colors duration-500"
+                className="px-2 border border-hairline text-bone-dim py-3 text-overline hover:text-bone hover:border-bone-dim transition-colors duration-500"
               >
                 Отклонить
               </button>

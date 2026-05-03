@@ -11,8 +11,8 @@ export const Terms = () => {
   return (
     <section className="bg-ink-soft py-28 md:py-40 border-t border-hairline">
       <div className="container-editorial">
-        <div className="grid grid-cols-12 gap-10 lg:gap-16">
-          <div className="col-span-12 lg:col-span-5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div className="lg:col-span-5 min-w-0">
             <div className="text-overline text-gold mb-6">— 008</div>
             <h2 className="text-editorial-md text-bone font-display mb-10 break-words hyphens-auto">
               Условия<br />
@@ -35,7 +35,7 @@ export const Terms = () => {
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-7">
+          <div className="lg:col-span-7 min-w-0">
             <div className="border-t border-hairline">
               {TERMS.map((t, i) => (
                 <div

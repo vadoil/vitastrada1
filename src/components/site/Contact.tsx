@@ -64,9 +64,9 @@ export const Contact = () => {
   return (
     <section id="contact" className="relative bg-ink py-28 md:py-40 border-t border-hairline overflow-hidden noise">
       <div className="container-editorial relative">
-        <div className="grid grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Left — manifesto */}
-          <div className="col-span-12 lg:col-span-6">
+          <div className="lg:col-span-6 min-w-0">
             <div className="text-overline text-gold mb-8">— 011 · Заявка</div>
             <h2 className="text-editorial-lg text-bone font-display mb-8">
               Готовы обсудить <span className="italic text-bone-dim">вашу коллекцию?</span>
@@ -96,8 +96,8 @@ export const Contact = () => {
           </div>
 
           {/* Right — form */}
-          <div className="col-span-12 lg:col-span-6">
-            <form onSubmit={onSubmit} className="space-y-0 border border-hairline bg-ink-soft">
+          <div className="lg:col-span-6 min-w-0">
+            <form onSubmit={onSubmit} className="space-y-0 border border-hairline bg-ink-soft min-w-0">
               {[
                 { name: "name", label: "Имя", type: "text", required: true },
                 { name: "brand", label: "Бренд", type: "text", required: true },
@@ -122,7 +122,7 @@ export const Contact = () => {
                   {["30–50", "50–200", "200–1000", "1000+"].map((v) => (
                     <label key={v} className="cursor-pointer">
                       <input type="radio" name="volume" value={v} className="peer sr-only" defaultChecked={v === "50–200"} />
-                      <span className="block px-4 py-2 text-overline border border-hairline text-bone-dim peer-checked:bg-bone peer-checked:text-ink peer-checked:border-bone hover:text-bone transition-all">
+                     <span className="block px-3 md:px-4 py-2 text-overline border border-hairline text-bone-dim peer-checked:bg-bone peer-checked:text-ink peer-checked:border-bone hover:text-bone transition-all">
                         {v}
                       </span>
                     </label>

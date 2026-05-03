@@ -86,17 +86,17 @@ export const Patterns = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-12 gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           {/* LEFT — group switcher + table */}
-          <div className="col-span-12 lg:col-span-8">
+          <div className="lg:col-span-8 min-w-0">
             {/* Tabs — vertical stack on mobile, horizontal on desktop */}
             <div className="mb-10 md:border-b md:border-hairline">
-              <div className="flex flex-col md:flex-row md:gap-x-8 md:flex-wrap">
+              <div className="grid grid-cols-1 sm:grid-cols-3 md:flex md:gap-x-8 md:flex-wrap">
                 {GROUPS.map((g, i) => (
                   <button
                     key={g.title}
                     onClick={() => setActive(i)}
-                    className={`text-overline transition-colors duration-300 relative text-left py-4 md:py-0 md:pb-6 border-b border-hairline md:border-b-0 ${
+                    className={`text-overline transition-colors duration-300 relative text-left py-4 px-0 md:py-0 md:pb-6 border-b border-hairline md:border-b-0 min-w-0 break-words ${
                       active === i ? "text-gold" : "text-bone-dim hover:text-bone"
                     }`}
                   >
@@ -137,7 +137,7 @@ export const Patterns = () => {
                   initial={{ opacity: 0, x: -8 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.05, ease }}
-                  className="grid grid-cols-[2rem_1fr_auto] md:grid-cols-12 gap-x-3 items-center py-4 md:py-5 border-b border-hairline group hover:bg-ink-soft/50 transition-colors duration-500 cursor-default"
+                  className="grid grid-cols-[1.75rem_minmax(0,1fr)] md:grid-cols-12 gap-x-3 gap-y-1 items-baseline py-4 md:py-5 border-b border-hairline group hover:bg-ink-soft/50 transition-colors duration-500 cursor-default"
                 >
                   <div className="md:col-span-1 font-mono text-overline text-bone-dim">
                     {String(i + 1).padStart(2, "0")}
@@ -151,7 +151,7 @@ export const Patterns = () => {
                   <div className="hidden md:block md:col-span-4 text-bone-dim text-base">
                     {r.variant}
                   </div>
-                  <div className="md:col-span-3 text-right whitespace-nowrap">
+                  <div className="col-start-2 md:col-start-auto md:col-span-3 md:text-right whitespace-nowrap">
                     <span className="font-display text-bone text-base md:text-2xl">
                       {fmt(r.base)}
                     </span>
@@ -167,8 +167,8 @@ export const Patterns = () => {
           </div>
 
           {/* RIGHT — extras card */}
-          <div className="col-span-12 lg:col-span-4">
-            <div className="sticky top-32 border border-gold/25 bg-wine-deep/40 p-6 md:p-10 relative overflow-hidden">
+          <div className="lg:col-span-4 min-w-0">
+            <div className="sticky top-32 border border-gold/25 bg-wine-deep/40 p-4 sm:p-6 md:p-10 relative overflow-hidden">
               {/* corner ticks */}
               {["top-3 left-3", "top-3 right-3 rotate-90", "bottom-3 left-3 -rotate-90", "bottom-3 right-3 rotate-180"].map(
                 (p) => (
@@ -188,10 +188,10 @@ export const Patterns = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.05, ease }}
-                    className="flex items-baseline justify-between gap-3 py-3"
+                    className="grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_auto] gap-1 sm:gap-3 py-3"
                   >
                     <span className="text-bone text-xs md:text-sm leading-snug min-w-0 break-words">{e.l}</span>
-                    <span className="font-mono text-overline text-gold whitespace-nowrap shrink-0">
+                    <span className="font-mono text-overline text-gold sm:whitespace-nowrap">
                       {e.v}
                     </span>
                   </motion.li>
