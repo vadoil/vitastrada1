@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <footer className="bg-ink border-t border-hairline">
@@ -44,9 +46,12 @@ export const Footer = () => {
 
         <div className="flex flex-wrap items-center justify-between gap-4 text-overline text-bone-dim">
           <div>© {new Date().getFullYear()} Nova &amp; Strada. Все права защищены.</div>
-          <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
-            Принимаем заявки
+          <div className="flex items-center gap-6">
+            <Link to="/privacy" className="link-underline">Политика конфиденциальности</Link>
+            <span className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
+              Принимаем заявки
+            </span>
           </div>
         </div>
       </div>

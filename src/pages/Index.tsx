@@ -7,6 +7,7 @@ import { WhyUs } from "@/components/site/WhyUs";
 import { Standards } from "@/components/site/Standards";
 import { Equipment } from "@/components/site/Equipment";
 import { Patterns } from "@/components/site/Patterns";
+import { PatternsCTA } from "@/components/site/PatternsCTA";
 import { Process } from "@/components/site/Process";
 import { Terms } from "@/components/site/Terms";
 import { Trust } from "@/components/site/Trust";
@@ -33,6 +34,7 @@ const Index = () => {
       <Equipment />
       <GoldStitchDivider />
       <Patterns />
+      <PatternsCTA />
       <GoldStitchDivider />
       <Process />
       <GoldStitchDivider />
