@@ -42,10 +42,12 @@ export const Contact = () => {
 
     setSubmitting(true);
     const { error } = await supabase.from("leads").insert({
-      ...parsed.data,
-      phone: parsed.data.phone || null,
-      volume: parsed.data.volume || null,
-      message: parsed.data.message || null,
+      name: parsed.data.name,
+      brand: parsed.data.brand,
+      email: parsed.data.email,
+      phone: parsed.data.phone || undefined,
+      volume: parsed.data.volume || undefined,
+      message: parsed.data.message || undefined,
       consent: true,
     });
     setSubmitting(false);
