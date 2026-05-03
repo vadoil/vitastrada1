@@ -141,15 +141,6 @@ export const Equipment = () => {
             </div>
           </div>
         </motion.div>
-                ))}
-              </div>
-
-              <div className="mt-10 text-overline text-gold/80">
-                ◆ CAD → Cutter → Sewing line — без бумаги
-              </div>
-            </div>
-          </div>
-        </motion.div>
 
         {/* ───────── Парк швейного оборудования ───────── */}
         <div className="grid grid-cols-12 gap-6 lg:gap-10">
