@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+
+export const Footer = () => {
   return (
     <footer className="bg-ink border-t border-hairline">
       <div className="container-editorial py-16">
