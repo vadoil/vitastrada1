@@ -89,26 +89,28 @@ export const Patterns = () => {
         <div className="grid grid-cols-12 gap-10 lg:gap-16">
           {/* LEFT — group switcher + table */}
           <div className="col-span-12 lg:col-span-8">
-            {/* Tabs */}
-            <div className="flex flex-wrap gap-x-8 gap-y-3 mb-10 border-b border-hairline pb-6">
-              {GROUPS.map((g, i) => (
-                <button
-                  key={g.title}
-                  onClick={() => setActive(i)}
-                  className={`text-overline transition-colors duration-300 relative pb-2 ${
-                    active === i ? "text-gold" : "text-bone-dim hover:text-bone"
-                  }`}
-                >
-                  {g.title}
-                  {active === i && (
-                    <motion.span
-                      layoutId="patterns-tab"
-                      className="absolute -bottom-[25px] left-0 right-0 h-px bg-gold"
-                      transition={{ duration: 0.5, ease }}
-                    />
-                  )}
-                </button>
-              ))}
+            {/* Tabs — scrollable on mobile */}
+            <div className="-mx-6 md:mx-0 mb-10 border-b border-hairline">
+              <div className="px-6 md:px-0 flex gap-x-6 md:gap-x-8 gap-y-3 pb-6 overflow-x-auto no-scrollbar md:flex-wrap snap-x snap-mandatory">
+                {GROUPS.map((g, i) => (
+                  <button
+                    key={g.title}
+                    onClick={() => setActive(i)}
+                    className={`text-overline transition-colors duration-300 relative pb-2 whitespace-nowrap snap-start shrink-0 ${
+                      active === i ? "text-gold" : "text-bone-dim hover:text-bone"
+                    }`}
+                  >
+                    {g.title}
+                    {active === i && (
+                      <motion.span
+                        layoutId="patterns-tab"
+                        className="absolute -bottom-[25px] left-0 right-0 h-px bg-gold"
+                        transition={{ duration: 0.5, ease }}
+                      />
+                    )}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Table header */}
