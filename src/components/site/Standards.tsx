@@ -23,9 +23,9 @@ export const Standards = () => {
 
             <div className="border-t border-hairline">
               {POINTS.map((p, i) => (
-                <div key={i} className="flex items-baseline justify-between py-5 border-b border-hairline group">
-                  <span className="text-bone text-base md:text-lg">{p.label}</span>
-                  <span className="font-mono text-overline text-gold tracking-wider">{p.value}</span>
+                <div key={i} className="flex items-baseline justify-between gap-4 py-5 border-b border-hairline group">
+                  <span className="text-bone text-sm md:text-lg min-w-0 break-words">{p.label}</span>
+                  <span className="font-mono text-overline text-gold tracking-wider whitespace-nowrap shrink-0">{p.value}</span>
                 </div>
               ))}
             </div>

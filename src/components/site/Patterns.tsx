@@ -90,8 +90,8 @@ export const Patterns = () => {
           {/* LEFT — group switcher + table */}
           <div className="col-span-12 lg:col-span-8">
             {/* Tabs — scrollable on mobile */}
-            <div className="-mx-6 md:mx-0 mb-10 border-b border-hairline">
-              <div className="px-6 md:px-0 flex gap-x-6 md:gap-x-8 gap-y-3 pb-6 overflow-x-auto no-scrollbar md:flex-wrap snap-x snap-mandatory">
+            <div className="-mx-6 md:mx-0 mb-10 border-b border-hairline relative">
+              <div className="px-6 md:px-0 flex gap-x-6 md:gap-x-8 gap-y-3 pb-6 overflow-x-auto no-scrollbar md:flex-wrap snap-x">
                 {GROUPS.map((g, i) => (
                   <button
                     key={g.title}
@@ -111,6 +111,8 @@ export const Patterns = () => {
                   </button>
                 ))}
               </div>
+              {/* fade hint on mobile that more tabs scroll horizontally */}
+              <div className="md:hidden pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-ink to-transparent" />
             </div>
 
             {/* Table header — desktop only */}
@@ -139,17 +141,20 @@ export const Patterns = () => {
                   <div className="col-span-2 md:col-span-1 font-mono text-overline text-bone-dim">
                     {String(i + 1).padStart(2, "0")}
                   </div>
-                  <div className="col-span-7 md:col-span-4 text-bone text-base md:text-lg font-display transition-transform duration-500 group-hover:translate-x-1">
-                    {r.item}
+                  <div className="col-span-10 md:col-span-4 min-w-0">
+                    <div className="text-bone text-base md:text-lg font-display transition-transform duration-500 group-hover:translate-x-1">
+                      {r.item}
+                    </div>
+                    <div className="md:hidden text-bone-dim text-xs mt-0.5">{r.variant}</div>
                   </div>
-                  <div className="col-span-3 md:col-span-3 text-right md:order-none order-last md:col-start-auto">
-                    <span className="font-display text-bone text-lg md:text-2xl">
+                  <div className="hidden md:block md:col-span-4 text-bone-dim text-base">
+                    {r.variant}
+                  </div>
+                  <div className="col-span-12 md:col-span-3 md:text-right pl-12 md:pl-0">
+                    <span className="font-display text-bone text-xl md:text-2xl">
                       {fmt(r.base)}
                     </span>
                     <span className="ml-1 text-overline text-gold">₽</span>
-                  </div>
-                  <div className="col-start-3 col-span-9 md:col-start-auto md:col-span-4 text-bone-dim text-xs md:text-base">
-                    {r.variant}
                   </div>
                 </motion.div>
               ))}
@@ -162,7 +167,7 @@ export const Patterns = () => {
 
           {/* RIGHT — extras card */}
           <div className="col-span-12 lg:col-span-4">
-            <div className="sticky top-32 border border-gold/25 bg-wine-deep/40 p-8 md:p-10 relative overflow-hidden">
+            <div className="sticky top-32 border border-gold/25 bg-wine-deep/40 p-6 md:p-10 relative overflow-hidden">
               {/* corner ticks */}
               {["top-3 left-3", "top-3 right-3 rotate-90", "bottom-3 left-3 -rotate-90", "bottom-3 right-3 rotate-180"].map(
                 (p) => (
@@ -182,10 +187,10 @@ export const Patterns = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.05, ease }}
-                    className="flex items-baseline justify-between gap-4 py-3"
+                    className="flex items-baseline justify-between gap-3 py-3"
                   >
-                    <span className="text-bone text-sm leading-snug">{e.l}</span>
-                    <span className="font-mono text-overline text-gold whitespace-nowrap">
+                    <span className="text-bone text-xs md:text-sm leading-snug min-w-0 break-words">{e.l}</span>
+                    <span className="font-mono text-overline text-gold whitespace-nowrap shrink-0">
                       {e.v}
                     </span>
                   </motion.li>

@@ -62,22 +62,22 @@ export const WhyUs = () => {
               {REASONS.map((r, i) => (
                 <motion.div
                   key={r.n}
-                  className="grid grid-cols-12 gap-4 py-8 group hover:bg-ink/40 transition-colors duration-500 -mx-4 px-4 cursor-default"
+                  className="grid grid-cols-12 gap-x-4 gap-y-2 py-8 group hover:bg-ink/40 transition-colors duration-500 -mx-4 px-4 cursor-default"
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.7, delay: i * 0.06, ease }}
                 >
-                  <div className="col-span-2 text-overline text-gold flex items-center gap-2">
+                  <div className="col-span-3 md:col-span-2 text-overline text-gold flex items-center gap-2">
                     <span className="inline-block h-px w-3 bg-gold transition-all duration-500 group-hover:w-6" />
                     {r.n}
                   </div>
-                  <div className="col-span-10 md:col-span-4">
-                    <h3 className="text-bone text-lg md:text-xl transition-transform duration-500 group-hover:translate-x-2">
+                  <div className="col-span-9 md:col-span-4 min-w-0">
+                    <h3 className="text-bone text-base md:text-xl break-words transition-transform duration-500 group-hover:translate-x-2">
                       {r.title}
                     </h3>
                   </div>
-                  <p className="col-span-12 md:col-span-6 text-bone-dim text-base leading-relaxed">
+                  <p className="col-span-12 md:col-span-6 text-bone-dim text-sm md:text-base leading-relaxed break-words">
                     {r.text}
                   </p>
                 </motion.div>
