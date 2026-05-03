@@ -1,4 +1,5 @@
 import machine from "@/assets/machine.jpg";
+import iechoCutter from "@/assets/iecho-cutter.jpg";
 import { motion } from "framer-motion";
 
 const EQUIPMENT = [
@@ -10,9 +11,9 @@ const EQUIPMENT = [
 
 const CUT_STATS = [
   { v: "± 0.1", u: "мм", l: "точность реза" },
-  { v: "120", u: "слоёв", l: "за один проход" },
+  { v: "75", u: "мм", l: "толщина настила" },
+  { v: "2.5×2.2", u: "м", l: "рабочий стол" },
   { v: "× 8", u: "быстрее", l: "ручного раскроя" },
-  { v: "0%", u: "брака", l: "по геометрии лекал" },
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;
