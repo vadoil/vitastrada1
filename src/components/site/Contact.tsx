@@ -104,7 +104,7 @@ export const Contact = () => {
                 { name: "email", label: "E-mail", type: "email", required: true },
                 { name: "phone", label: "Телефон", type: "tel" },
               ].map((f) => (
-                <div key={f.name} className="border-b border-hairline px-6 py-5 group focus-within:bg-ink transition-colors">
+                <div key={f.name} className="border-b border-hairline px-4 md:px-6 py-4 md:py-5 group focus-within:bg-ink transition-colors">
                   <label className="text-overline text-bone-dim block mb-2">{f.label}{f.required && <span className="text-gold">*</span>}</label>
                   <input
                     type={f.type}
@@ -116,7 +116,7 @@ export const Contact = () => {
                 </div>
               ))}
 
-              <div className="border-b border-hairline px-6 py-5 group focus-within:bg-ink transition-colors">
+              <div className="border-b border-hairline px-4 md:px-6 py-4 md:py-5 group focus-within:bg-ink transition-colors">
                 <label className="text-overline text-bone-dim block mb-3">Объём партии</label>
                 <div className="flex flex-wrap gap-2">
                   {["30–50", "50–200", "200–1000", "1000+"].map((v) => (
@@ -130,7 +130,7 @@ export const Contact = () => {
                 </div>
               </div>
 
-              <div className="border-b border-hairline px-6 py-5 group focus-within:bg-ink transition-colors">
+              <div className="border-b border-hairline px-4 md:px-6 py-4 md:py-5 group focus-within:bg-ink transition-colors">
                 <label className="text-overline text-bone-dim block mb-2">О проекте</label>
                 <textarea
                   name="message"
@@ -142,7 +142,7 @@ export const Contact = () => {
               </div>
 
               {/* Consent */}
-              <div className="px-6 py-5 border-b border-hairline">
+              <div className="px-4 md:px-6 py-4 md:py-5 border-b border-hairline">
                 <label className="flex items-start gap-3 cursor-pointer group">
                   <span className="relative mt-[2px] inline-block">
                     <input
