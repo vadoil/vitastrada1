@@ -1,0 +1,11 @@
+[Unit]
+Description=VPS backup to Yandex.Disk (WebDAV)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/vps-backup.sh
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
