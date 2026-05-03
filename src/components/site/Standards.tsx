@@ -11,8 +11,8 @@ export const Standards = () => {
   return (
     <section id="standards" className="relative bg-ink py-28 md:py-40 overflow-hidden">
       <div className="container-editorial">
-        <div className="grid grid-cols-12 gap-10 items-center">
-          <div className="col-span-12 lg:col-span-6 order-2 lg:order-1">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-6 order-2 lg:order-1 min-w-0">
             <div className="text-overline text-gold mb-6">— 005</div>
             <h2 className="text-editorial-lg text-bone font-display mb-10 max-w-xl">
               Стандарт качества, который видно <span className="italic text-bone-dim">в каждом шве</span>
@@ -31,7 +31,7 @@ export const Standards = () => {
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-6 order-1 lg:order-2">
+          <div className="lg:col-span-6 order-1 lg:order-2 min-w-0">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img
                 src={quality}
@@ -41,7 +41,7 @@ export const Standards = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
 
-              <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between">
+              <div className="absolute bottom-5 left-5 right-5 md:bottom-8 md:left-8 md:right-8 flex items-end justify-between gap-4 min-w-0">
                 <div className="text-overline text-bone">
                   <div>QC Department</div>
                   <div className="text-bone-dim mt-1">Поштучный контроль</div>
