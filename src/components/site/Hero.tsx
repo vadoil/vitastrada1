@@ -17,7 +17,7 @@ export const Hero = () => {
       <motion.img
         src={heroImage}
         alt="Контрактный пошив одежды для премиум-брендов — Nova & Strada, Москва"
-        className="absolute inset-0 h-full w-full object-cover object-[78%_center] md:object-contain md:object-right"
+        className="absolute inset-0 h-full w-full object-cover object-[78%_center] md:object-cover md:object-center"
         width={1920}
         height={1080}
         initial={{ scale: 1.04, opacity: 0 }}
