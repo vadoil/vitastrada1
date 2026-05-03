@@ -137,22 +137,22 @@ export const Patterns = () => {
                   initial={{ opacity: 0, x: -8 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.05, ease }}
-                  className="grid grid-cols-12 gap-x-4 gap-y-1 py-4 md:py-5 border-b border-hairline group hover:bg-ink-soft/50 transition-colors duration-500 cursor-default"
+                  className="grid grid-cols-12 gap-x-3 items-center py-4 md:py-5 border-b border-hairline group hover:bg-ink-soft/50 transition-colors duration-500 cursor-default"
                 >
-                  <div className="col-span-2 md:col-span-1 font-mono text-overline text-bone-dim">
+                  <div className="col-span-1 font-mono text-overline text-bone-dim">
                     {String(i + 1).padStart(2, "0")}
                   </div>
-                  <div className="col-span-10 md:col-span-4 min-w-0">
-                    <div className="text-bone text-base md:text-lg font-display transition-transform duration-500 group-hover:translate-x-1">
+                  <div className="col-span-7 md:col-span-4 min-w-0">
+                    <div className="text-bone text-base md:text-lg font-display transition-transform duration-500 group-hover:translate-x-1 truncate">
                       {r.item}
                     </div>
-                    <div className="md:hidden text-bone-dim text-xs mt-0.5">{r.variant}</div>
+                    <div className="md:hidden text-bone-dim text-xs mt-0.5 truncate">{r.variant}</div>
                   </div>
                   <div className="hidden md:block md:col-span-4 text-bone-dim text-base">
                     {r.variant}
                   </div>
-                  <div className="col-span-12 md:col-span-3 md:text-right pl-12 md:pl-0">
-                    <span className="font-display text-bone text-xl md:text-2xl">
+                  <div className="col-span-4 md:col-span-3 text-right whitespace-nowrap">
+                    <span className="font-display text-bone text-lg md:text-2xl">
                       {fmt(r.base)}
                     </span>
                     <span className="ml-1 text-overline text-gold">₽</span>
