@@ -113,8 +113,8 @@ export const Patterns = () => {
               </div>
             </div>
 
-            {/* Table header */}
-            <div className="grid grid-cols-12 gap-4 text-overline text-bone-dim pb-4 border-b border-hairline">
+            {/* Table header — desktop only */}
+            <div className="hidden md:grid grid-cols-12 gap-4 text-overline text-bone-dim pb-4 border-b border-hairline">
               <div className="col-span-1">№</div>
               <div className="col-span-4">Изделие</div>
               <div className="col-span-4">Тип</div>
@@ -134,22 +134,22 @@ export const Patterns = () => {
                   initial={{ opacity: 0, x: -8 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.05, ease }}
-                  className="grid grid-cols-12 gap-4 py-5 border-b border-hairline group hover:bg-ink-soft/50 transition-colors duration-500 cursor-default"
+                  className="grid grid-cols-12 gap-x-4 gap-y-1 py-4 md:py-5 border-b border-hairline group hover:bg-ink-soft/50 transition-colors duration-500 cursor-default"
                 >
-                  <div className="col-span-1 font-mono text-overline text-bone-dim">
+                  <div className="col-span-2 md:col-span-1 font-mono text-overline text-bone-dim">
                     {String(i + 1).padStart(2, "0")}
                   </div>
-                  <div className="col-span-4 text-bone text-base md:text-lg font-display transition-transform duration-500 group-hover:translate-x-1">
+                  <div className="col-span-7 md:col-span-4 text-bone text-base md:text-lg font-display transition-transform duration-500 group-hover:translate-x-1">
                     {r.item}
                   </div>
-                  <div className="col-span-4 text-bone-dim text-sm md:text-base">
-                    {r.variant}
-                  </div>
-                  <div className="col-span-3 text-right">
-                    <span className="font-display text-bone text-xl md:text-2xl">
+                  <div className="col-span-3 md:col-span-3 text-right md:order-none order-last md:col-start-auto">
+                    <span className="font-display text-bone text-lg md:text-2xl">
                       {fmt(r.base)}
                     </span>
                     <span className="ml-1 text-overline text-gold">₽</span>
+                  </div>
+                  <div className="col-start-3 col-span-9 md:col-start-auto md:col-span-4 text-bone-dim text-xs md:text-base">
+                    {r.variant}
                   </div>
                 </motion.div>
               ))}
