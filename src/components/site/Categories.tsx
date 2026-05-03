@@ -4,7 +4,9 @@ import dresses from "@/assets/cat-dresses.jpg";
 import knitwear from "@/assets/cat-knitwear.jpg";
 import shirts from "@/assets/cat-shirts.jpg";
 import jersey from "@/assets/cat-jersey.jpg";
+import jerseyMobile from "@/assets/cat-jersey-mobile.jpg";
 import dogwear from "@/assets/cat-dogwear.jpg";
+import dogwearMobile from "@/assets/cat-dogwear-mobile.jpg";
 
 type Category = {
   n: string;
@@ -13,6 +15,7 @@ type Category = {
   items: string[];
   fabrics: string;
   image: string;
+  imageMobile?: string;
   size: "lg" | "md" | "sm";
 };
 
