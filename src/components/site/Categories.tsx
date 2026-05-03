@@ -72,6 +72,7 @@ const CATEGORIES: Category[] = [
     items: ["Худи", "Свитшоты", "Wide-pants", "Лонгсливы"],
     fabrics: "Хлопок 400 г/м² · Модал · Двунитка премиум",
     image: jersey,
+    imageMobile: jerseyMobile,
     size: "md",
   },
   {
@@ -81,6 +82,7 @@ const CATEGORIES: Category[] = [
     items: ["Пальто", "Тренчи", "Жилеты", "Свитеры", "Шлейки", "Аксессуары"],
     fabrics: "Шерсть · Кашемир · Технические подкладки",
     image: dogwear,
+    imageMobile: dogwearMobile,
     size: "lg",
   },
 ];
