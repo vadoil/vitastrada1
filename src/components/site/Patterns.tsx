@@ -89,30 +89,31 @@ export const Patterns = () => {
         <div className="grid grid-cols-12 gap-10 lg:gap-16">
           {/* LEFT — group switcher + table */}
           <div className="col-span-12 lg:col-span-8">
-            {/* Tabs — scrollable on mobile */}
-            <div className="-mx-6 md:mx-0 mb-10 border-b border-hairline relative">
-              <div className="px-6 md:px-0 flex gap-x-6 md:gap-x-8 gap-y-3 pb-6 overflow-x-auto no-scrollbar md:flex-wrap snap-x">
+            {/* Tabs — vertical stack on mobile, horizontal on desktop */}
+            <div className="mb-10 md:border-b md:border-hairline">
+              <div className="flex flex-col md:flex-row md:gap-x-8 md:flex-wrap">
                 {GROUPS.map((g, i) => (
                   <button
                     key={g.title}
                     onClick={() => setActive(i)}
-                    className={`text-overline transition-colors duration-300 relative pb-2 whitespace-nowrap snap-start shrink-0 ${
+                    className={`text-overline transition-colors duration-300 relative text-left py-4 md:py-0 md:pb-6 border-b border-hairline md:border-b-0 ${
                       active === i ? "text-gold" : "text-bone-dim hover:text-bone"
                     }`}
                   >
+                    <span className="font-mono text-bone-dim/60 mr-3 md:hidden">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     {g.title}
                     {active === i && (
                       <motion.span
                         layoutId="patterns-tab"
-                        className="absolute -bottom-[25px] left-0 right-0 h-px bg-gold"
+                        className="absolute left-0 bottom-0 md:-bottom-[1px] h-px bg-gold w-12 md:w-full"
                         transition={{ duration: 0.5, ease }}
                       />
                     )}
                   </button>
                 ))}
               </div>
-              {/* fade hint on mobile that more tabs scroll horizontally */}
-              <div className="md:hidden pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-ink to-transparent" />
             </div>
 
             {/* Table header — desktop only */}
