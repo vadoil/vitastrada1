@@ -21,9 +21,9 @@ export const WhyUs = () => {
       <Compass className="absolute top-10 right-10 text-gold/30 hidden md:block" size={120} />
 
       <div className="container-editorial relative">
-        <div className="grid grid-cols-12 gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           {/* Left: image */}
-          <div className="col-span-12 lg:col-span-5">
+          <div className="lg:col-span-5 min-w-0">
             <div className="sticky top-32">
               <div className="relative aspect-[3/4] overflow-hidden">
                 <img
@@ -53,7 +53,7 @@ export const WhyUs = () => {
           </div>
 
           {/* Right: copy + reasons */}
-          <div className="col-span-12 lg:col-span-7">
+          <div className="lg:col-span-7 min-w-0">
             <h2 className="text-editorial-lg text-bone font-display mb-16 max-w-2xl break-words hyphens-auto">
               Почему бренды <span className="italic text-bone-dim">остаются</span> с&nbsp;нами
             </h2>
@@ -62,22 +62,22 @@ export const WhyUs = () => {
               {REASONS.map((r, i) => (
                 <motion.div
                   key={r.n}
-                  className="grid grid-cols-12 gap-x-4 gap-y-2 py-8 group hover:bg-ink/40 transition-colors duration-500 -mx-4 px-4 cursor-default"
+                  className="grid grid-cols-[3rem_minmax(0,1fr)] md:grid-cols-12 gap-x-4 gap-y-2 py-8 group hover:bg-ink/40 transition-colors duration-500 cursor-default"
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.7, delay: i * 0.06, ease }}
                 >
-                  <div className="col-span-3 md:col-span-2 text-overline text-gold flex items-center gap-2">
+                  <div className="md:col-span-2 text-overline text-gold flex items-center gap-2 min-w-0">
                     <span className="inline-block h-px w-3 bg-gold transition-all duration-500 group-hover:w-6" />
                     {r.n}
                   </div>
-                  <div className="col-span-9 md:col-span-4 min-w-0">
+                  <div className="md:col-span-4 min-w-0">
                     <h3 className="text-bone text-base md:text-xl break-words transition-transform duration-500 group-hover:translate-x-2">
                       {r.title}
                     </h3>
                   </div>
-                  <p className="col-span-12 md:col-span-6 text-bone-dim text-sm md:text-base leading-relaxed break-words">
+                  <p className="col-span-2 md:col-span-6 text-bone-dim text-sm md:text-base leading-relaxed break-words min-w-0">
                     {r.text}
                   </p>
                 </motion.div>
