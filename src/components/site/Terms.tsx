@@ -40,10 +40,10 @@ export const Terms = () => {
               {TERMS.map((t, i) => (
                 <div
                   key={i}
-                  className="flex items-baseline justify-between py-7 border-b border-hairline group"
+                  className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 sm:gap-6 py-6 border-b border-hairline group"
                 >
-                  <span className="text-bone-dim text-overline">{t.label}</span>
-                  <span className="text-bone text-2xl md:text-3xl font-display">
+                  <span className="text-bone-dim text-overline shrink-0">{t.label}</span>
+                  <span className="text-bone text-xl sm:text-2xl md:text-3xl font-display sm:text-right break-words min-w-0">
                     {t.value}
                   </span>
                 </div>
