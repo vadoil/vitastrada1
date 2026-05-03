@@ -167,7 +167,7 @@ export const Patterns = () => {
 
           {/* RIGHT — extras card */}
           <div className="col-span-12 lg:col-span-4">
-            <div className="sticky top-32 border border-gold/25 bg-wine-deep/40 p-8 md:p-10 relative overflow-hidden">
+            <div className="sticky top-32 border border-gold/25 bg-wine-deep/40 p-6 md:p-10 relative overflow-hidden">
               {/* corner ticks */}
               {["top-3 left-3", "top-3 right-3 rotate-90", "bottom-3 left-3 -rotate-90", "bottom-3 right-3 rotate-180"].map(
                 (p) => (
@@ -187,10 +187,10 @@ export const Patterns = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.05, ease }}
-                    className="flex items-baseline justify-between gap-4 py-3"
+                    className="flex items-baseline justify-between gap-3 py-3"
                   >
-                    <span className="text-bone text-sm leading-snug">{e.l}</span>
-                    <span className="font-mono text-overline text-gold whitespace-nowrap">
+                    <span className="text-bone text-xs md:text-sm leading-snug min-w-0 break-words">{e.l}</span>
+                    <span className="font-mono text-overline text-gold whitespace-nowrap shrink-0">
                       {e.v}
                     </span>
                   </motion.li>
