@@ -1,17 +1,62 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
+import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
+
+const schema = z.object({
+  name: z.string().trim().min(1, "Укажите имя").max(100),
+  brand: z.string().trim().min(1, "Укажите бренд").max(120),
+  email: z.string().trim().email("Некорректный e-mail").max(255),
+  phone: z.string().trim().max(40).optional().or(z.literal("")),
+  volume: z.string().max(20).optional().or(z.literal("")),
+  message: z.string().trim().max(2000).optional().or(z.literal("")),
+});
 
 export const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
+  const [consent, setConsent] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!consent) {
+      toast.error("Подтвердите согласие на обработку персональных данных");
+      return;
+    }
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const data = {
+      name: String(fd.get("name") ?? ""),
+      brand: String(fd.get("brand") ?? ""),
+      email: String(fd.get("email") ?? ""),
+      phone: String(fd.get("phone") ?? ""),
+      volume: String(fd.get("volume") ?? ""),
+      message: String(fd.get("message") ?? ""),
+    };
+
+    const parsed = schema.safeParse(data);
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0]?.message ?? "Проверьте поля");
+      return;
+    }
+
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      toast.success("Заявка отправлена. Свяжемся в течение 24 часов.");
-      (e.target as HTMLFormElement).reset();
-    }, 800);
+    const { error } = await supabase.from("leads").insert({
+      ...parsed.data,
+      phone: parsed.data.phone || null,
+      volume: parsed.data.volume || null,
+      message: parsed.data.message || null,
+      consent: true,
+    });
+    setSubmitting(false);
+
+    if (error) {
+      toast.error("Не удалось отправить. Попробуйте ещё раз.");
+      return;
+    }
+    toast.success("Заявка отправлена. Свяжемся в течение 24 часов.");
+    form.reset();
+    setConsent(false);
   };
 
   return (
@@ -39,7 +84,7 @@ export const Contact = () => {
               </div>
               <div className="flex items-baseline justify-between">
                 <span className="text-overline text-bone-dim">E-mail</span>
-                <a href="mailto:hello@ateliernoir.ru" className="text-bone link-underline">hello@ateliernoir.ru</a>
+                <a href="mailto:hello@novastrada.ru" className="text-bone link-underline">hello@novastrada.ru</a>
               </div>
               <div className="flex items-baseline justify-between">
                 <span className="text-overline text-bone-dim">Часы</span>
@@ -63,6 +108,7 @@ export const Contact = () => {
                     type={f.type}
                     name={f.name}
                     required={f.required}
+                    maxLength={255}
                     className="w-full bg-transparent text-bone text-lg placeholder-bone-dim/40 outline-none border-0"
                   />
                 </div>
@@ -82,20 +128,44 @@ export const Contact = () => {
                 </div>
               </div>
 
-              <div className="px-6 py-5 group focus-within:bg-ink transition-colors">
+              <div className="border-b border-hairline px-6 py-5 group focus-within:bg-ink transition-colors">
                 <label className="text-overline text-bone-dim block mb-2">О проекте</label>
                 <textarea
                   name="message"
                   rows={4}
+                  maxLength={2000}
                   placeholder="Что планируете шить, сроки, особенности…"
                   className="w-full bg-transparent text-bone text-base placeholder-bone-dim/40 outline-none border-0 resize-none"
                 />
               </div>
 
+              {/* Consent */}
+              <div className="px-6 py-5 border-b border-hairline">
+                <label className="flex items-start gap-3 cursor-pointer group">
+                  <span className="relative mt-[2px] inline-block">
+                    <input
+                      type="checkbox"
+                      checked={consent}
+                      onChange={(e) => setConsent(e.target.checked)}
+                      className="peer sr-only"
+                    />
+                    <span className="block h-4 w-4 border border-hairline peer-checked:bg-gold peer-checked:border-gold transition-colors" />
+                  </span>
+                  <span className="text-bone-dim text-xs leading-relaxed">
+                    Отправляя заявку, я соглашаюсь на обработку персональных данных
+                    в соответствии с{" "}
+                    <Link to="/privacy" className="text-bone link-underline">
+                      политикой конфиденциальности
+                    </Link>
+                    .
+                  </span>
+                </label>
+              </div>
+
               <button
                 type="submit"
-                disabled={submitting}
-                className="btn-stitched w-full group bg-bone text-ink py-6 text-overline hover:bg-gold transition-colors duration-500 flex items-center justify-center gap-4 disabled:opacity-50"
+                disabled={submitting || !consent}
+                className="btn-stitched w-full group bg-bone text-ink py-6 text-overline hover:bg-gold transition-colors duration-500 flex items-center justify-center gap-4 disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 {submitting ? "Отправляем…" : "Отправить заявку"}
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="group-hover:translate-x-1 transition-transform duration-500">
