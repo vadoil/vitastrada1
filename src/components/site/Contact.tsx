@@ -76,21 +76,21 @@ export const Contact = () => {
             </p>
 
             <div className="space-y-6 border-t border-hairline pt-8">
-              <div className="flex items-baseline justify-between">
-                <span className="text-overline text-bone-dim">Адрес</span>
-                <span className="text-bone text-base">Москва, ул. Производственная, 12</span>
+              <div className="flex items-baseline justify-between gap-4 flex-wrap">
+                <span className="text-overline text-bone-dim shrink-0">Адрес</span>
+                <span className="text-bone text-sm md:text-base text-right break-words min-w-0">Москва, ул. Производственная, 12</span>
               </div>
-              <div className="flex items-baseline justify-between">
-                <span className="text-overline text-bone-dim">Телефон</span>
-                <a href="tel:+74950000000" className="text-bone link-underline font-mono">+7 495 000 00 00</a>
+              <div className="flex items-baseline justify-between gap-4 flex-wrap">
+                <span className="text-overline text-bone-dim shrink-0">Телефон</span>
+                <a href="tel:+74950000000" className="text-bone link-underline font-mono text-sm md:text-base">+7 495 000 00 00</a>
               </div>
-              <div className="flex items-baseline justify-between">
-                <span className="text-overline text-bone-dim">E-mail</span>
-                <a href="mailto:hello@novastrada.ru" className="text-bone link-underline">hello@novastrada.ru</a>
+              <div className="flex items-baseline justify-between gap-4 flex-wrap">
+                <span className="text-overline text-bone-dim shrink-0">E-mail</span>
+                <a href="mailto:hello@novastrada.ru" className="text-bone link-underline text-sm md:text-base break-all min-w-0">hello@novastrada.ru</a>
               </div>
-              <div className="flex items-baseline justify-between">
-                <span className="text-overline text-bone-dim">Часы</span>
-                <span className="text-bone text-base">Пн – Пт · 10:00 – 19:00</span>
+              <div className="flex items-baseline justify-between gap-4 flex-wrap">
+                <span className="text-overline text-bone-dim shrink-0">Часы</span>
+                <span className="text-bone text-sm md:text-base">Пн – Пт · 10:00 – 19:00</span>
               </div>
             </div>
           </div>
