@@ -63,7 +63,7 @@ export const Equipment = () => {
                }}
           />
           <motion.div
-            className="absolute inset-y-0 w-px bg-gradient-to-b from-transparent via-gold to-transparent pointer-events-none"
+            className="absolute inset-y-0 w-px bg-gradient-to-b from-transparent via-gold to-transparent pointer-events-none z-10"
             initial={{ left: "0%" }}
             animate={{ left: "100%" }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "linear" }}
@@ -75,7 +75,7 @@ export const Equipment = () => {
             <div className="col-span-12 lg:col-span-7 p-8 md:p-14 lg:p-16">
               <div className="flex items-center gap-3 text-overline text-gold mb-8">
                 <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
-                <span>Bullmer · Gerber · CNC Cutting Lab</span>
+                <span>iECHO GLSA-2520 · Smart-T · CNC Cutting Lab</span>
               </div>
 
               <h3 className="text-editorial-lg text-bone font-display leading-[1.02]">
@@ -84,15 +84,15 @@ export const Equipment = () => {
               </h3>
 
               <p className="mt-8 max-w-xl text-bone-dim text-base md:text-lg leading-relaxed">
-                Два промышленных раскройных комплекса <span className="text-bone">Bullmer Premiumcut</span> и <span className="text-bone">Gerber&nbsp;Z7</span>. Векторное лекало уходит из CAD прямо на стол — нож режет 120 слоёв ткани с точностью до 0,1&nbsp;мм. Идеальная геометрия каждой детали, ноль человеческой ошибки, скорость в 8&nbsp;раз выше ручного раскроя.
+                Промышленный раскройный комплекс <span className="text-bone">iECHO GLSA-2520</span> от «Смарт-Т» — рабочий стол <span className="text-bone">2,5 × 2,2&nbsp;м</span> и настил толщиной до <span className="text-bone">75&nbsp;мм</span>. Векторное лекало уходит из CAD прямо на стол: нож точно и быстро режет ткани разных по составу и свойствам — от шёлка до плотной шерсти. Идеальная геометрия каждой детали и скорость в 8&nbsp;раз выше ручного раскроя.
               </p>
 
               <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-3 max-w-md text-bone text-sm">
                 {[
                   "Раскладка с минимальным расходом ткани",
-                  "Работа с шёлком, кашемиром, кожей",
-                  "Многослойная резка до 8 см толщины",
-                  "Полная digital-проверка каждого лекала",
+                  "Шёлк, кашемир, кожа, технотекстиль",
+                  "Многослойный настил до 75 мм",
+                  "Полная digital-проверка лекал",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-2">
                     <span className="mt-1.5 h-px w-3 shrink-0 bg-gold" />
@@ -102,25 +102,45 @@ export const Equipment = () => {
               </ul>
             </div>
 
-            {/* RIGHT — stats panel */}
-            <div className="col-span-12 lg:col-span-5 border-t lg:border-t-0 lg:border-l border-gold/20 p-8 md:p-14 lg:p-16 bg-ink/30">
-              <div className="text-overline text-bone-dim mb-8">Цифры</div>
-              <div className="space-y-7">
-                {CUT_STATS.map((s, i) => (
-                  <motion.div
-                    key={s.l}
-                    className="flex items-baseline justify-between gap-6 border-b border-hairline pb-5"
-                    initial={{ opacity: 0, x: 16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, delay: 0.2 + i * 0.1, ease }}
-                  >
-                    <div className="text-bone font-display text-4xl md:text-5xl leading-none">
-                      {s.v}
-                      <span className="ml-2 text-base text-gold tracking-wide">{s.u}</span>
-                    </div>
-                    <div className="text-overline text-bone-dim text-right max-w-[8rem]">{s.l}</div>
-                  </motion.div>
+            {/* RIGHT — photo + stats */}
+            <div className="col-span-12 lg:col-span-5 border-t lg:border-t-0 lg:border-l border-gold/20 bg-ink/30">
+              <div className="relative aspect-[4/3] overflow-hidden border-b border-gold/20">
+                <img
+                  src={iechoCutter}
+                  alt="Раскройный комплекс iECHO GLSA-2520"
+                  loading="lazy"
+                  className="h-full w-full object-cover animate-slow-zoom"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-4 text-overline text-gold/90">iECHO GLSA-2520</div>
+              </div>
+              <div className="p-8 md:p-10">
+                <div className="text-overline text-bone-dim mb-6">Цифры</div>
+                <div className="space-y-5">
+                  {CUT_STATS.map((s, i) => (
+                    <motion.div
+                      key={s.l}
+                      className="flex items-baseline justify-between gap-6 border-b border-hairline pb-4"
+                      initial={{ opacity: 0, x: 16 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.7, delay: 0.2 + i * 0.1, ease }}
+                    >
+                      <div className="text-bone font-display text-3xl md:text-4xl leading-none">
+                        {s.v}
+                        <span className="ml-2 text-sm text-gold tracking-wide">{s.u}</span>
+                      </div>
+                      <div className="text-overline text-bone-dim text-right max-w-[8rem]">{s.l}</div>
+                    </motion.div>
+                  ))}
+                </div>
+                <div className="mt-8 text-overline text-gold/80">
+                  ◆ CAD → Cutter → Sewing line — без бумаги
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
                 ))}
               </div>
 
