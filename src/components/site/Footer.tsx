@@ -35,14 +35,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div className="col-span-12 md:col-span-2">
-            <div className="text-overline text-bone-dim mb-4">Соц.</div>
-            <ul className="space-y-2 text-bone text-sm">
-              <li><a href="#" className="link-underline">Instagram</a></li>
-              <li><a href="#" className="link-underline">Telegram</a></li>
-              <li><a href="#" className="link-underline">Behance</a></li>
-            </ul>
-          </div>
         </div>
 
         <div className="hairline mt-16 mb-6" />
