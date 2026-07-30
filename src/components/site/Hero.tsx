@@ -90,7 +90,7 @@ export const Hero = () => {
           <div className="col-span-12 md:col-span-8 lg:col-span-9">
             {/* Eyebrow with stitch icon */}
             <motion.div
-              className="flex items-center gap-4 mb-8 md:mb-12"
+              className="hidden md:flex items-center gap-4 mb-8 md:mb-12"
               initial={{ opacity: 0, x: -16 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.3, ease }}
