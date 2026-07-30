@@ -49,7 +49,7 @@ export const WhyUs = () => {
 
           {/* Right: copy + reasons — scrolls past the image on desktop */}
           <div className="lg:col-span-7 min-w-0 py-20 md:py-28 lg:pl-20 xl:pl-28">
-            <h2 className="text-editorial-lg text-bone font-display mb-16 lg:mb-24 max-w-2xl break-words hyphens-auto px-4 sm:px-0">
+            <h2 className="text-editorial-lg text-bone font-display mb-16 lg:mb-24 max-w-2xl break-words hyphens-auto">
               Почему бренды <span className="italic text-bone-dim">остаются</span> с&nbsp;нами
             </h2>
 
@@ -57,7 +57,7 @@ export const WhyUs = () => {
               {REASONS.map((r, i) => (
                 <motion.div
                   key={r.n}
-                  className="grid grid-cols-[3rem_minmax(0,1fr)] md:grid-cols-12 gap-x-4 gap-y-2 py-8 md:py-10 group hover:bg-ink/40 transition-colors duration-500 cursor-default px-4 sm:px-0"
+                  className="grid grid-cols-[3rem_minmax(0,1fr)] md:grid-cols-12 gap-x-4 gap-y-2 py-8 md:py-10 group hover:bg-ink/40 transition-colors duration-500 cursor-default"
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
