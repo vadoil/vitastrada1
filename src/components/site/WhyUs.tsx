@@ -23,7 +23,7 @@ export const WhyUs = () => {
       <div className="container-editorial relative">
         <div className="grid grid-cols-1 lg:grid-cols-12">
           {/* Left: pinned image — full viewport on desktop, normal stack on mobile */}
-          <div className="lg:col-span-5 min-w-0 lg:sticky lg:top-0 lg:h-screen">
+          <div className="lg:col-span-5 min-w-0 lg:sticky lg:top-0 lg:h-screen lg:pt-28">
             <div className="relative h-[60vh] lg:h-full overflow-hidden">
               <img
                 src={atelier}
