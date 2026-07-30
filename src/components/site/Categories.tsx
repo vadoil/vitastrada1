@@ -175,7 +175,7 @@ export const Categories = () => {
               <div className="col-span-12 md:col-span-4 md:col-start-9">
                 <div className="hairline mb-4" />
                 <div className="text-overline text-bone-dim mb-1">Партии</div>
-                <div className="text-bone text-2xl font-display">от 30 ед.</div>
+                <div className="text-bone text-2xl font-display">от 5 ед.</div>
               </div>
             </div>
           </div>
