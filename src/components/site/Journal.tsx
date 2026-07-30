@@ -1,25 +1,25 @@
-import garment from "@/assets/garment.jpg";
-import fabrics from "@/assets/fabrics.jpg";
-import atelier from "@/assets/atelier-hands.jpg";
+import j1 from "@/assets/journal-1.jpg.asset.json";
+import j2 from "@/assets/journal-2.jpg.asset.json";
+import j3 from "@/assets/journal-3.jpg.asset.json";
 
 const VIDEOS = [
   {
-    title: "Как мы выбираем ткань для премиальной коллекции",
+    title: "Пальто-халат: посадка, которая держит форму",
     duration: "06:42",
     chapter: "Эпизод 03",
-    image: fabrics,
+    image: j1.url,
   },
   {
-    title: "Анатомия пальто: от лекала до готового изделия",
+    title: "Тренч: 42 операции от лекала до готового изделия",
     duration: "11:18",
     chapter: "Эпизод 02",
-    image: garment,
+    image: j2.url,
   },
   {
-    title: "Закулисье: один день в производственном цеху",
+    title: "Вечернее платье: корсетная основа и работа с шёлком",
     duration: "08:55",
     chapter: "Эпизод 01",
-    image: atelier,
+    image: j3.url,
   },
 ];
 
