@@ -57,8 +57,11 @@ export const WhyUs = () => {
               <div className="absolute top-0 left-0 w-6 h-6 md:w-8 md:h-8 border-t border-l border-gold/60 opacity-60 group-hover:opacity-100 group-hover:w-10 group-hover:h-10 transition-all duration-500" />
               <div className="absolute bottom-0 right-0 w-6 h-6 md:w-8 md:h-8 border-b border-r border-gold/60 opacity-60 group-hover:opacity-100 group-hover:w-10 group-hover:h-10 transition-all duration-500" />
 
+              {/* Gold icon */}
+              <r.icon className="w-5 h-5 md:w-6 md:h-6 text-gold mb-3 md:mb-4" strokeWidth={1.5} />
+
               {/* Number */}
-              <div className="text-overline text-gold/70 group-hover:text-gold mb-3 md:mb-4 transition-colors duration-500">
+              <div className="text-overline text-gold/70 group-hover:text-gold mb-2 md:mb-3 transition-colors duration-500">
                 {r.n}
               </div>
 
