@@ -58,7 +58,7 @@ Deno.serve(async (req) => {
 
   // One-time setup: register webhook with Telegram
   if (url.searchParams.get("setup") === "1") {
-    const hook = `${url.origin}${url.pathname}`;
+    const hook = `https://${url.host}${url.pathname}`;
     const r = await fetch(`${API}/setWebhook`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
