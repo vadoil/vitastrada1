@@ -66,7 +66,7 @@ export const Hero = () => {
         {/* Top meta row */}
         <div className="flex items-start justify-between pt-28 md:pt-32">
           <motion.div
-            className="flex items-center gap-4 text-overline text-bone"
+            className="hidden md:flex items-center gap-4 text-overline text-bone"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease }}
