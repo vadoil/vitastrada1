@@ -156,19 +156,19 @@ export const Equipment = () => {
           </div>
 
           <div className="col-span-12 lg:col-span-7">
-            <div className="text-overline text-bone-dim mb-6">Швейный парк</div>
+            <div className="text-overline text-bone-dim mb-6 text-base">Швейный парк</div>
             <div className="border-t border-hairline">
               {EQUIPMENT.map((e, i) => (
                 <div
                   key={i}
-                  className="grid grid-cols-12 gap-4 py-6 border-b border-hairline group hover:bg-ink/60 transition-colors duration-500 cursor-default"
+                  className="grid grid-cols-12 gap-4 py-7 md:py-8 border-b border-hairline group hover:bg-ink/60 transition-colors duration-500 cursor-default"
                 >
-                  <div className="col-span-1 text-overline text-bone-dim font-mono">
+                  <div className="col-span-1 text-overline text-bone-dim font-mono text-base md:text-lg">
                     {String(i + 1).padStart(2, "0")}
                   </div>
-                  <div className="col-span-4 text-bone text-lg font-display">{e.brand}</div>
-                  <div className="col-span-3 font-mono text-overline text-gold">{e.model}</div>
-                  <div className="col-span-4 text-bone-dim text-sm">{e.role}</div>
+                  <div className="col-span-4 text-bone text-xl md:text-2xl font-display">{e.brand}</div>
+                  <div className="col-span-3 font-mono text-base md:text-lg text-gold">{e.model}</div>
+                  <div className="col-span-4 text-bone-dim text-base md:text-lg">{e.role}</div>
                 </div>
               ))}
             </div>
