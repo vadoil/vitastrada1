@@ -25,7 +25,7 @@ const VIDEOS = [
 
 export const Journal = () => {
   return (
-    <section id="journal" className="bg-ink-soft py-28 md:py-40 border-t border-hairline">
+    <section id="journal" className="bg-ink-soft py-20 md:py-28 border-t border-hairline">
       <div className="container-editorial">
         <div className="grid grid-cols-12 gap-6 mb-16">
           <div className="col-span-12 md:col-span-3">

@@ -43,7 +43,7 @@ const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
 
 export const Stats = () => {
   return (
-    <section className="bg-ink py-28 md:py-40 relative overflow-hidden">
+    <section className="bg-ink py-20 md:py-28 relative overflow-hidden">
       <Compass className="absolute top-12 right-12 text-gold/20 hidden md:block" size={140} />
 
       <div className="container-editorial relative">

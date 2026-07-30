@@ -39,7 +39,7 @@ const STEPS = [
 
 export const Process = () => {
   return (
-    <section id="process" className="bg-ink py-28 md:py-40 border-t border-hairline">
+    <section id="process" className="bg-ink py-20 md:py-28 border-t border-hairline">
       <div className="container-editorial">
         <div className="grid grid-cols-12 gap-6 mb-20">
           <div className="col-span-12 md:col-span-3">

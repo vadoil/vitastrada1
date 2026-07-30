@@ -23,7 +23,7 @@ const LOGOS = ["MAISON ORÉ", "STUDIO CIEL", "FORMA", "NORDIC EDIT", "ATELIER 9"
 
 export const Trust = () => {
   return (
-    <section className="bg-ink py-28 md:py-40 border-t border-hairline">
+    <section className="bg-ink py-20 md:py-28 border-t border-hairline">
       <div className="container-editorial">
         <div className="grid grid-cols-12 gap-6 mb-20">
           <div className="col-span-12 md:col-span-3">

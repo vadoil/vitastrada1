@@ -16,7 +16,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export const WhyUs = () => {
   return (
-    <section className="bg-ink-soft py-28 md:py-40 relative overflow-hidden">
+    <section className="bg-ink-soft py-20 md:py-28 relative overflow-hidden">
       {/* Decorative compass */}
       <Compass className="absolute top-10 right-10 text-gold/30 hidden md:block" size={120} />
 

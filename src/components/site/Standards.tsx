@@ -9,7 +9,7 @@ const POINTS = [
 
 export const Standards = () => {
   return (
-    <section id="standards" className="relative bg-ink py-28 md:py-40 overflow-hidden">
+    <section id="standards" className="relative bg-ink py-20 md:py-28 overflow-hidden">
       <div className="container-editorial">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-6 order-2 lg:order-1 min-w-0">

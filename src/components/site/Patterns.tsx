@@ -57,7 +57,7 @@ export const Patterns = () => {
   return (
     <section
       id="patterns"
-      className="relative bg-ink py-28 md:py-40 border-t border-hairline overflow-hidden"
+      className="relative bg-ink py-20 md:py-28 border-t border-hairline overflow-hidden"
     >
       {/* faint pattern paper background */}
       <div

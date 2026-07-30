@@ -66,7 +66,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative bg-ink py-28 md:py-40 border-t border-hairline overflow-hidden noise">
+    <section id="contact" className="relative bg-ink py-20 md:py-28 border-t border-hairline overflow-hidden noise">
       <div className="container-editorial relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Left — manifesto */}
