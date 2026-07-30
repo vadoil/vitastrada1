@@ -54,27 +54,27 @@ export const Process = () => {
         </div>
 
 
-        <div className="border-t border-hairline">
+        <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-0 md:border-t md:border-hairline">
           {STEPS.map((s) => (
             <div
               key={s.n}
-              className="group grid grid-cols-12 gap-4 py-10 md:py-14 border-b border-hairline cursor-default relative overflow-hidden"
+              className="group flex flex-col md:grid md:grid-cols-12 md:gap-4 p-4 md:py-14 border border-hairline md:border-x-0 md:border-t-0 md:border-b cursor-default relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-ink-soft -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out" />
 
-              <div className="col-span-2 md:col-span-1 text-overline text-gold font-mono relative z-10">
+              <div className="text-overline text-gold font-mono relative z-10 mb-2 md:mb-0 md:col-span-1">
                 {s.n}
               </div>
 
-              <div className="col-span-10 md:col-span-4 relative z-10">
-                <h3 className="text-editorial-md text-bone font-display">{s.title}</h3>
+              <div className="relative z-10 mb-3 md:mb-0 md:col-span-4">
+                <h3 className="text-lg md:text-editorial-md text-bone font-display leading-tight">{s.title}</h3>
               </div>
 
-              <p className="col-span-12 md:col-span-5 text-bone-dim text-base md:text-lg leading-relaxed md:pt-3 relative z-10">
+              <p className="text-bone-dim text-sm md:text-base md:text-lg leading-relaxed relative z-10 mb-3 md:mb-0 md:col-span-5 md:pt-3">
                 {s.desc}
               </p>
 
-              <div className="col-span-12 md:col-span-2 text-overline text-bone-dim md:text-right md:pt-3 relative z-10 font-mono">
+              <div className="text-overline text-bone-dim relative z-10 font-mono mt-auto md:mt-0 md:col-span-2 md:text-right md:pt-3">
                 {s.duration}
               </div>
             </div>
