@@ -32,6 +32,9 @@ export const Footer = () => {
             <ul className="space-y-2 text-bone text-sm">
               <li><a href="mailto:vitastrada@mail.ru" className="link-underline break-all">vitastrada@mail.ru</a></li>
               <li><a href="tel:+79818334231" className="link-underline font-mono">+7 981 833 42 31</a></li>
+              <li className="text-bone-dim text-xs leading-relaxed pt-1">
+                Усковский проезд, 2,<br />деревня Голиково, Химки, МО
+              </li>
             </ul>
           </div>
 
