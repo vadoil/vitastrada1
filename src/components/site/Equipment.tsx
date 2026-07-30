@@ -92,7 +92,7 @@ export const Equipment = () => {
                   "Раскладка с минимальным расходом ткани",
                   "Шёлк, кашемир, кожа, технотекстиль",
                   "Многослойный настил до 75 мм",
-                  "Полная digital-проверка лекал",
+                  "Полная цифровая проверка лекал",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-2">
                     <span className="mt-1.5 h-px w-3 shrink-0 bg-gold" />
