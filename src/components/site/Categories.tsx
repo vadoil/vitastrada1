@@ -21,7 +21,7 @@ const CATEGORIES: Category[] = [
     tagline: "Архитектура силуэта",
     items: ["Пальто oversize", "Тренчи", "Шерстяные жакеты", "Парки", "Жилеты"],
     fabrics: "Шерсть · Кашемир · Loro Piana · Drago",
-    image: look1.url,
+    image: look4.url,
   },
   {
     n: "02",
@@ -29,7 +29,7 @@ const CATEGORIES: Category[] = [
     tagline: "Итальянский крой",
     items: ["Жакеты", "Брюки палаццо", "Юбки", "Тройки"],
     fabrics: "Шерсть super 130s · Лён · Габардин",
-    image: look2.url,
+    image: look5.url,
   },
   {
     n: "03",
@@ -45,7 +45,7 @@ const CATEGORIES: Category[] = [
     tagline: "Ручная вязка и фактура",
     items: ["Свитеры oversize", "Кардиганы", "Водолазки", "Джемперы"],
     fabrics: "Меринос · Кашемир · Альпака",
-    image: look4.url,
+    image: look2.url,
   },
   {
     n: "05",
@@ -53,15 +53,15 @@ const CATEGORIES: Category[] = [
     tagline: "Мягкая роскошь",
     items: ["Шёлковые блузы", "Поплин", "Туники", "Сорочки"],
     fabrics: "Шёлк-сатин · Хлопок Giza · Лён",
-    image: look5.url,
+    image: look6.url,
   },
   {
     n: "06",
-    title: "Премиум-джерси",
-    tagline: "Элевейтид athleisure",
-    items: ["Худи", "Свитшоты", "Wide-pants", "Лонгсливы"],
-    fabrics: "Хлопок 400 г/м² · Модал · Двунитка премиум",
-    image: look6.url,
+    title: "Демисезонная одежда",
+    tagline: "Межсезонье в деталях",
+    items: ["Плащи", "Лёгкие пальто", "Ветровки", "Стёганые куртки"],
+    fabrics: "Хлопок-твил · Технический нейлон · Шерсть лёгкая",
+    image: look1.url,
   },
 ];
 
