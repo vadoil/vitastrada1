@@ -47,16 +47,13 @@ export const Stats = () => {
       <Compass className="absolute top-12 right-12 text-gold/20 hidden md:block" size={140} />
 
       <div className="container-editorial relative">
-        <div className="grid grid-cols-12 gap-6 mb-16 md:mb-24">
-          <div className="col-span-12 md:col-span-3">
-            <div className="text-overline text-gold">— 002</div>
-          </div>
-          <div className="col-span-12 md:col-span-9">
-            <h2 className="text-editorial-md text-bone font-display max-w-3xl">
-              Производство в цифрах. <span className="text-bone-dim italic">Без преувеличений.</span>
-            </h2>
-          </div>
+        <div className="mb-12 md:mb-20">
+          <div className="text-overline text-gold mb-5">— 002</div>
+          <h2 className="text-editorial-md text-bone font-display">
+            Производство в цифрах. <span className="text-bone-dim italic">Без преувеличений.</span>
+          </h2>
         </div>
+
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px">
           {STATS.map((s, i) => (
