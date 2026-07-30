@@ -2,7 +2,7 @@ import look1 from "@/assets/look-file-6.jpg";
 import look2 from "@/assets/look-file-4.jpg";
 import look3 from "@/assets/look-file-3.jpg";
 import look4 from "@/assets/look-file-5.jpg";
-import look5 from "@/assets/look-file.jpg";
+
 import look6 from "@/assets/look-file-2.jpg";
 import kostyumAsset from "@/assets/kostyum-group.jpg.asset.json";
 
