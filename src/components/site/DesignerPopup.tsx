@@ -9,9 +9,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const schema = z.object({
   name: z.string().trim().min(1, "Укажите имя").max(100),
-  brand: z.string().trim().max(120).optional().or(z.literal("")),
-  email: z.string().trim().email("Некорректный e-mail").max(255),
-  phone: z.string().trim().max(40).optional().or(z.literal("")),
+  phone: z.string().trim().min(6, "Укажите телефон").max(40),
   message: z.string().trim().max(2000).optional().or(z.literal("")),
 });
 
@@ -62,8 +60,6 @@ export const DesignerPopup = () => {
     const fd = new FormData(e.currentTarget);
     const data = {
       name: String(fd.get("name") ?? ""),
-      brand: String(fd.get("brand") ?? ""),
-      email: String(fd.get("email") ?? ""),
       phone: String(fd.get("phone") ?? ""),
       message: String(fd.get("message") ?? ""),
     };
@@ -77,9 +73,8 @@ export const DesignerPopup = () => {
     setSubmitting(true);
     const payload = {
       name: parsed.data.name,
-      brand: parsed.data.brand || undefined,
-      email: parsed.data.email,
-      phone: parsed.data.phone || undefined,
+      email: "",
+      phone: parsed.data.phone,
       volume: "5–30",
       message: parsed.data.message || undefined,
       consent: true,
@@ -113,7 +108,7 @@ export const DesignerPopup = () => {
           <div className="absolute inset-0 bg-ink/80 backdrop-blur-sm" onClick={close} />
 
           <motion.div
-            className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto bg-ink-soft border border-hairline noise"
+            className="relative w-full max-w-xl max-h-[94vh] overflow-y-auto bg-ink-soft border border-hairline noise"
             initial={{ y: 40, opacity: 0, scale: 0.98 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 20, opacity: 0, scale: 0.98 }}
@@ -140,64 +135,62 @@ export const DesignerPopup = () => {
                 </p>
               </div>
             ) : (
-              <div className="p-6 sm:p-10">
-                <div className="text-overline text-gold mb-4">— Молодым дизайнерам</div>
-                <h3 className="font-display text-2xl sm:text-4xl text-bone leading-tight mb-4">
+              <div className="p-5 sm:p-8">
+                <div className="text-overline text-gold mb-2">— Молодым дизайнерам</div>
+                <h3 className="font-display text-xl sm:text-3xl text-bone leading-tight mb-2 pr-10">
                   Специальные цены на <span className="italic text-bone-dim">первую коллекцию</span>
                 </h3>
-                <p className="text-bone-dim text-sm sm:text-base leading-relaxed mb-6">
-                  Начинаете свой бренд? Отшиваем от <span className="text-bone">5 единиц</span>,
-                  помогаем с лекалами и подбором ткани. Специальные условия для дизайнеров
-                  без действующего производства.
+                <p className="text-bone-dim text-xs sm:text-sm leading-relaxed mb-4">
+                  Отшиваем от <span className="text-bone">5 единиц</span>, помогаем с лекалами
+                  и подбором ткани.
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-hairline border border-hairline mb-8">
+                <div className="grid grid-cols-3 gap-px bg-hairline border border-hairline mb-4">
                   {[
-                    { k: "−20%", v: "на разработку лекал" },
-                    { k: "от 5 ед.", v: "минимальная партия" },
-                    { k: "0 ₽", v: "консультация технолога" },
+                    { k: "−20%", v: "лекала" },
+                    { k: "от 5 ед.", v: "партия" },
+                    { k: "0 ₽", v: "технолог" },
                   ].map((x) => (
-                    <div key={x.k} className="bg-ink-soft px-4 py-5">
-                      <div className="font-display text-xl text-gold">{x.k}</div>
-                      <div className="text-overline text-bone-dim mt-1">{x.v}</div>
+                    <div key={x.k} className="bg-ink-soft px-2 py-3 text-center sm:text-left sm:px-4">
+                      <div className="font-display text-base sm:text-lg text-gold">{x.k}</div>
+                      <div className="text-overline text-bone-dim text-[10px] mt-0.5">{x.v}</div>
                     </div>
                   ))}
                 </div>
 
                 <form onSubmit={onSubmit} className="border border-hairline">
-                  {[
-                    { name: "name", label: "Имя", type: "text", required: true },
-                    { name: "brand", label: "Бренд / проект", type: "text" },
-                    { name: "email", label: "E-mail", type: "email", required: true },
-                    { name: "phone", label: "Телефон", type: "tel" },
-                  ].map((f) => (
-                    <div key={f.name} className="border-b border-hairline px-4 py-3 focus-within:bg-ink transition-colors">
-                      <label className="text-overline text-bone-dim block mb-1">
-                        {f.label}
-                        {f.required && <span className="text-gold">*</span>}
-                      </label>
-                      <input
-                        type={f.type}
-                        name={f.name}
-                        required={f.required}
-                        maxLength={255}
-                        className="w-full bg-transparent text-bone text-base outline-none border-0"
-                      />
-                    </div>
-                  ))}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-px sm:bg-hairline">
+                    {[
+                      { name: "name", label: "Имя", type: "text" },
+                      { name: "phone", label: "Телефон", type: "tel" },
+                    ].map((f) => (
+                      <div key={f.name} className="bg-ink-soft border-b border-hairline sm:border-b-0 px-4 py-2.5 focus-within:bg-ink transition-colors">
+                        <label className="text-overline text-bone-dim block text-[10px]">
+                          {f.label}
+                          <span className="text-gold">*</span>
+                        </label>
+                        <input
+                          type={f.type}
+                          name={f.name}
+                          required
+                          maxLength={255}
+                          className="w-full bg-transparent text-bone text-base outline-none border-0"
+                        />
+                      </div>
+                    ))}
+                  </div>
 
-                  <div className="border-b border-hairline px-4 py-3 focus-within:bg-ink transition-colors">
-                    <label className="text-overline text-bone-dim block mb-1">Что хотите отшить</label>
+                  <div className="border-y border-hairline px-4 py-2.5 focus-within:bg-ink transition-colors">
+                    <label className="text-overline text-bone-dim block text-[10px]">Что хотите отшить</label>
                     <textarea
                       name="message"
-                      rows={3}
+                      rows={2}
                       maxLength={2000}
                       className="w-full bg-transparent text-bone text-base outline-none border-0 resize-none"
                     />
                   </div>
-
-                  <div className="px-4 py-4 border-b border-hairline">
-                    <label className="flex items-start gap-3 cursor-pointer">
+                  <div className="px-4 py-3 border-b border-hairline">
+                    <label className="flex items-start gap-2.5 cursor-pointer">
                       <span className="relative mt-[2px] inline-block">
                         <input
                           type="checkbox"
@@ -207,7 +200,7 @@ export const DesignerPopup = () => {
                         />
                         <span className="block h-4 w-4 border border-hairline peer-checked:bg-gold peer-checked:border-gold transition-colors" />
                       </span>
-                      <span className="text-bone-dim text-xs leading-relaxed">
+                      <span className="text-bone-dim text-[11px] leading-snug">
                         Согласен на обработку персональных данных согласно ФЗ-152 и{" "}
                         <Link to="/privacy" className="text-bone link-underline" onClick={close}>
                           политике конфиденциальности
@@ -220,10 +213,11 @@ export const DesignerPopup = () => {
                   <button
                     type="submit"
                     disabled={submitting || !consent}
-                    className="btn-stitched w-full bg-bone text-ink py-4 text-overline hover:bg-gold transition-colors duration-500 disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="btn-stitched w-full bg-bone text-ink py-3.5 text-overline hover:bg-gold transition-colors duration-500 disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     {submitting ? "Отправляем…" : "Получить условия"}
                   </button>
+
                 </form>
               </div>
             )}
