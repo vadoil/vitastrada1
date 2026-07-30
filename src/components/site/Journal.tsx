@@ -49,9 +49,10 @@ export const Journal = () => {
                   src={v.image}
                   alt={v.title}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.4s]"
+                  className="absolute inset-0 h-full w-full object-cover contrast-[1.2] saturate-[1.05] group-hover:scale-105 transition-all duration-[1.4s]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
+
 
                 {/* Play */}
                 <div className="absolute inset-0 flex items-center justify-center">

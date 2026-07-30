@@ -73,9 +73,10 @@ const Card = ({ c }: { c: Category }) => {
           src={c.image}
           alt={`${c.title} — пример изделия NOVA & STRADA`}
           loading="lazy"
-          className="h-full w-full object-cover object-top transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
+          className="h-full w-full object-cover object-top contrast-[1.18] saturate-[1.08] brightness-[0.96] transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent transition-opacity duration-700 group-hover:opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent transition-opacity duration-700" />
+
         <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(ellipse_at_top,_hsl(var(--gold)/0.18),_transparent_60%)]" />
       </div>
 
