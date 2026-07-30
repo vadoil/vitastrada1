@@ -4,7 +4,7 @@ import look3 from "@/assets/look-file-3.jpg";
 import look4 from "@/assets/look-file-5.jpg";
 
 import look6 from "@/assets/look-file-2.jpg";
-import kostyumAsset from "@/assets/kostyum-group.jpg.asset.json";
+import kostyumPhoto from "@/assets/cat-suiting-photo.jpg";
 
 type Category = {
   n: string;
@@ -30,7 +30,7 @@ const CATEGORIES: Category[] = [
     tagline: "Итальянский крой",
     items: ["Жакеты", "Брюки палаццо", "Юбки", "Тройки"],
     fabrics: "Шерсть super 130s · Лён · Габардин",
-    image: kostyumAsset.url,
+    image: kostyumPhoto,
   },
   {
     n: "03",
