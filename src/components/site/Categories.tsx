@@ -124,9 +124,9 @@ export const Categories = () => {
       id="capabilities"
       className="bg-ink py-28 md:py-40 border-t border-hairline"
     >
-      <div className="container-editorial">
-        {/* Header */}
-        <div className="grid grid-cols-12 gap-6 mb-16 md:mb-24">
+      {/* Header stays in container */}
+      <div className="container-editorial mb-10 md:mb-16">
+        <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-3">
             <div className="text-overline text-gold">— 003</div>
           </div>
@@ -136,29 +136,33 @@ export const Categories = () => {
             </h2>
             <div className="mt-10 grid grid-cols-12 gap-6">
               <p className="col-span-12 md:col-span-7 text-bone-dim text-base md:text-lg leading-relaxed">
-                Шесть направлений — от архитектурной верхней одежды до премиального джерси. Работаем с люксовыми тканями: Loro Piana, Drago, итальянский шёлк, шотландский кашемир. Сложные конструкции и деликатные материалы — наша территория. Ниже — примеры изделий нашего производства.
+                Шесть направлений — от архитектурной верхней одежды до премиального трикотажа. Работаем с люксовыми тканями: Loro Piana, Drago, итальянский шёлк, шотландский кашемир. Сложные конструкции и деликатные материалы — наша территория. Ниже — примеры изделий нашего производства.
               </p>
               <div className="col-span-12 md:col-span-4 md:col-start-9">
                 <div className="hairline mb-4" />
                 <div className="text-overline text-bone-dim mb-1">Партии</div>
-                <div className="text-bone text-2xl font-display">от 5 ед.</div>
+                <div className="text-bone text-2xl md:text-3xl font-display">от 5 ед.</div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Grid — 3 per row on desktop */}
+      {/* Full-width grid */}
+      <div className="px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {CATEGORIES.map((c) => (
             <Card key={c.n} c={c} />
           ))}
         </div>
+      </div>
 
-        {/* Footer note */}
-        <div className="mt-16 md:mt-20 grid grid-cols-12 gap-6 items-end">
+      {/* Footer note */}
+      <div className="container-editorial mt-16 md:mt-20">
+        <div className="grid grid-cols-12 gap-6 items-end">
           <div className="col-span-12 md:col-span-6">
             <div className="hairline mb-6" />
-            <p className="text-bone-dim text-base leading-relaxed">
+            <p className="text-bone-dim text-base md:text-lg leading-relaxed">
               Не нашли свою категорию? Мы беремся за нестандартные изделия и капсульные коллекции с особыми требованиями к конструкции.
             </p>
           </div>
