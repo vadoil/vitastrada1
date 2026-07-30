@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      journal_media: {
+        Row: {
+          chapter: string | null
+          cover_url: string | null
+          created_at: string
+          duration: string | null
+          id: string
+          published: boolean
+          title: string
+          video_url: string | null
+        }
+        Insert: {
+          chapter?: string | null
+          cover_url?: string | null
+          created_at?: string
+          duration?: string | null
+          id?: string
+          published?: boolean
+          title?: string
+          video_url?: string | null
+        }
+        Update: {
+          chapter?: string | null
+          cover_url?: string | null
+          created_at?: string
+          duration?: string | null
+          id?: string
+          published?: boolean
+          title?: string
+          video_url?: string | null
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           brand: string | null
