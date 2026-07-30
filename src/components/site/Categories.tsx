@@ -4,6 +4,7 @@ import look3 from "@/assets/look-file-3.jpg";
 import look4 from "@/assets/look-file-5.jpg";
 import look5 from "@/assets/look-file.jpg";
 import look6 from "@/assets/look-file-2.jpg";
+import kostyumAsset from "@/assets/kostyum-group.jpg.asset.json";
 
 type Category = {
   n: string;
