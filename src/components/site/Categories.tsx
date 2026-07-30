@@ -67,7 +67,7 @@ const CATEGORIES: Category[] = [
 
 const Card = ({ c }: { c: Category }) => {
   return (
-    <article className="group relative bg-ink-soft overflow-hidden cursor-pointer aspect-[3/4]">
+    <article className="group relative bg-ink-soft overflow-hidden cursor-pointer h-full min-h-[420px] sm:min-h-[520px] lg:min-h-[640px]">
       <div className="absolute inset-0 overflow-hidden">
         <img
           src={c.image}
@@ -81,21 +81,21 @@ const Card = ({ c }: { c: Category }) => {
       </div>
 
       {/* Top meta */}
-      <div className="absolute top-4 left-4 right-4 md:top-6 md:left-6 md:right-6 grid grid-cols-[auto_minmax(0,1fr)] gap-3 items-start">
-        <span className="text-overline text-bone/80 whitespace-nowrap">№ {c.n}</span>
-        <span className="text-overline text-gold text-right break-words min-w-0">
+      <div className="absolute top-5 left-5 right-5 md:top-8 md:left-8 md:right-8 grid grid-cols-[auto_minmax(0,1fr)] gap-3 items-start">
+        <span className="text-overline text-bone/80 whitespace-nowrap text-sm md:text-base">№ {c.n}</span>
+        <span className="text-overline text-gold text-right break-words min-w-0 text-sm md:text-base">
           {c.tagline}
         </span>
       </div>
 
       {/* Bottom content */}
-      <div className="absolute inset-x-0 bottom-0 p-5 md:p-7">
-        <div className="flex items-end justify-between gap-3 mb-3 min-w-0">
-          <h3 className="text-editorial-md text-bone font-display leading-[0.95] min-w-0 break-words">
+      <div className="absolute inset-x-0 bottom-0 p-6 md:p-10">
+        <div className="flex items-end justify-between gap-4 mb-4 min-w-0">
+          <h3 className="text-2xl md:text-3xl lg:text-editorial-md text-bone font-display leading-[0.95] min-w-0 break-words">
             {c.title}
           </h3>
-          <span className="shrink-0 h-9 w-9 md:h-10 md:w-10 border border-bone/40 flex items-center justify-center transition-all duration-500 group-hover:bg-bone group-hover:text-ink group-hover:border-bone group-hover:rotate-45">
-            <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+          <span className="shrink-0 h-10 w-10 md:h-12 md:w-12 border border-bone/40 flex items-center justify-center transition-all duration-500 group-hover:bg-bone group-hover:text-ink group-hover:border-bone group-hover:rotate-45">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1" />
             </svg>
           </span>
@@ -103,13 +103,13 @@ const Card = ({ c }: { c: Category }) => {
 
         <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-700 ease-out">
           <div className="overflow-hidden">
-            <div className="pt-3 border-t border-bone/20">
-              <ul className="flex flex-wrap gap-x-3 gap-y-1 text-overline text-bone-dim mb-2">
+            <div className="pt-4 border-t border-bone/20">
+              <ul className="flex flex-wrap gap-x-3 gap-y-1 text-overline text-bone-dim mb-3 text-sm md:text-base">
                 {c.items.map((it) => (
                   <li key={it}>{it}</li>
                 ))}
               </ul>
-              <p className="text-bone/70 text-xs font-mono tracking-wide">{c.fabrics}</p>
+              <p className="text-bone/70 text-sm md:text-base font-mono tracking-wide">{c.fabrics}</p>
             </div>
           </div>
         </div>
