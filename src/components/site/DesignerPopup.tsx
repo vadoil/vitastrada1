@@ -9,9 +9,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const schema = z.object({
   name: z.string().trim().min(1, "Укажите имя").max(100),
-  brand: z.string().trim().max(120).optional().or(z.literal("")),
-  email: z.string().trim().email("Некорректный e-mail").max(255),
-  phone: z.string().trim().max(40).optional().or(z.literal("")),
+  phone: z.string().trim().min(6, "Укажите телефон").max(40),
   message: z.string().trim().max(2000).optional().or(z.literal("")),
 });
 
