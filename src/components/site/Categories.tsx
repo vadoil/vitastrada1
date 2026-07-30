@@ -95,7 +95,7 @@ const Card = ({ c }: { c: Category }) => {
           <h3 className="text-2xl md:text-3xl lg:text-editorial-md text-bone font-display leading-[0.95] min-w-0 break-words">
             {c.title}
           </h3>
-          <span className="shrink-0 h-10 w-10 md:h-12 md:w-12 border border-bone/40 flex items-center justify-center transition-all duration-500 group-hover:bg-bone group-hover:text-ink group-hover:border-bone group-hover:rotate-45">
+          <span className="shrink-0 h-10 w-10 md:h-12 md:w-12 border border-bone/40 flex items-center justify-center transition-all duration-500 group-hover:bg-bone group-hover:text-ink group-hover:border-bone">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1" />
             </svg>
