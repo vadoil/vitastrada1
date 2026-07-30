@@ -27,19 +27,18 @@ export const Journal = () => {
   return (
     <section id="journal" className="bg-ink-soft py-20 md:py-28 border-t border-hairline">
       <div className="container-editorial">
-        <div className="grid grid-cols-12 gap-6 mb-16">
-          <div className="col-span-12 md:col-span-3">
-            <div className="text-overline text-gold">— 010</div>
-          </div>
-          <div className="col-span-12 md:col-span-9 flex items-end justify-between flex-wrap gap-6">
-            <h2 className="text-editorial-lg text-bone font-display max-w-3xl">
+        <div className="flex items-end justify-between flex-wrap gap-6 mb-12 md:mb-16">
+          <div>
+            <div className="text-overline text-gold mb-5">— 010</div>
+            <h2 className="text-editorial-lg text-bone font-display">
               Журнал <span className="italic text-bone-dim">производства</span>
             </h2>
-            <a href="#" className="text-overline text-bone link-underline">
-              Все эпизоды
-            </a>
           </div>
+          <a href="#" className="text-overline text-bone link-underline">
+            Все эпизоды
+          </a>
         </div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-hairline border border-hairline">
           {VIDEOS.map((v, i) => (
