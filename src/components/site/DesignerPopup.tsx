@@ -189,10 +189,8 @@ export const DesignerPopup = () => {
                       className="w-full bg-transparent text-bone text-base outline-none border-0 resize-none"
                     />
                   </div>
-
-
-                  <div className="px-4 py-4 border-b border-hairline">
-                    <label className="flex items-start gap-3 cursor-pointer">
+                  <div className="px-4 py-3 border-b border-hairline">
+                    <label className="flex items-start gap-2.5 cursor-pointer">
                       <span className="relative mt-[2px] inline-block">
                         <input
                           type="checkbox"
@@ -202,7 +200,7 @@ export const DesignerPopup = () => {
                         />
                         <span className="block h-4 w-4 border border-hairline peer-checked:bg-gold peer-checked:border-gold transition-colors" />
                       </span>
-                      <span className="text-bone-dim text-xs leading-relaxed">
+                      <span className="text-bone-dim text-[11px] leading-snug">
                         Согласен на обработку персональных данных согласно ФЗ-152 и{" "}
                         <Link to="/privacy" className="text-bone link-underline" onClick={close}>
                           политике конфиденциальности
@@ -215,10 +213,11 @@ export const DesignerPopup = () => {
                   <button
                     type="submit"
                     disabled={submitting || !consent}
-                    className="btn-stitched w-full bg-bone text-ink py-4 text-overline hover:bg-gold transition-colors duration-500 disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="btn-stitched w-full bg-bone text-ink py-3.5 text-overline hover:bg-gold transition-colors duration-500 disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     {submitting ? "Отправляем…" : "Получить условия"}
                   </button>
+
                 </form>
               </div>
             )}
