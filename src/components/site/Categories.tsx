@@ -67,7 +67,7 @@ const CATEGORIES: Category[] = [
 
 const Card = ({ c }: { c: Category }) => {
   return (
-    <article className="group relative bg-ink-soft overflow-hidden cursor-pointer aspect-[3/4]">
+    <article className="group relative bg-ink-soft overflow-hidden cursor-pointer h-full min-h-[420px] sm:min-h-[520px] lg:min-h-[640px]">
       <div className="absolute inset-0 overflow-hidden">
         <img
           src={c.image}
@@ -81,21 +81,21 @@ const Card = ({ c }: { c: Category }) => {
       </div>
 
       {/* Top meta */}
-      <div className="absolute top-4 left-4 right-4 md:top-6 md:left-6 md:right-6 grid grid-cols-[auto_minmax(0,1fr)] gap-3 items-start">
-        <span className="text-overline text-bone/80 whitespace-nowrap">№ {c.n}</span>
-        <span className="text-overline text-gold text-right break-words min-w-0">
+      <div className="absolute top-5 left-5 right-5 md:top-8 md:left-8 md:right-8 grid grid-cols-[auto_minmax(0,1fr)] gap-3 items-start">
+        <span className="text-overline text-bone/80 whitespace-nowrap text-sm md:text-base">№ {c.n}</span>
+        <span className="text-overline text-gold text-right break-words min-w-0 text-sm md:text-base">
           {c.tagline}
         </span>
       </div>
 
       {/* Bottom content */}
-      <div className="absolute inset-x-0 bottom-0 p-5 md:p-7">
-        <div className="flex items-end justify-between gap-3 mb-3 min-w-0">
-          <h3 className="text-editorial-md text-bone font-display leading-[0.95] min-w-0 break-words">
+      <div className="absolute inset-x-0 bottom-0 p-6 md:p-10">
+        <div className="flex items-end justify-between gap-4 mb-4 min-w-0">
+          <h3 className="text-2xl md:text-3xl lg:text-editorial-md text-bone font-display leading-[0.95] min-w-0 break-words">
             {c.title}
           </h3>
-          <span className="shrink-0 h-9 w-9 md:h-10 md:w-10 border border-bone/40 flex items-center justify-center transition-all duration-500 group-hover:bg-bone group-hover:text-ink group-hover:border-bone group-hover:rotate-45">
-            <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+          <span className="shrink-0 h-10 w-10 md:h-12 md:w-12 border border-bone/40 flex items-center justify-center transition-all duration-500 group-hover:bg-bone group-hover:text-ink group-hover:border-bone group-hover:rotate-45">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1" />
             </svg>
           </span>
@@ -103,13 +103,13 @@ const Card = ({ c }: { c: Category }) => {
 
         <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-700 ease-out">
           <div className="overflow-hidden">
-            <div className="pt-3 border-t border-bone/20">
-              <ul className="flex flex-wrap gap-x-3 gap-y-1 text-overline text-bone-dim mb-2">
+            <div className="pt-4 border-t border-bone/20">
+              <ul className="flex flex-wrap gap-x-3 gap-y-1 text-overline text-bone-dim mb-3 text-sm md:text-base">
                 {c.items.map((it) => (
                   <li key={it}>{it}</li>
                 ))}
               </ul>
-              <p className="text-bone/70 text-xs font-mono tracking-wide">{c.fabrics}</p>
+              <p className="text-bone/70 text-sm md:text-base font-mono tracking-wide">{c.fabrics}</p>
             </div>
           </div>
         </div>
@@ -124,9 +124,9 @@ export const Categories = () => {
       id="capabilities"
       className="bg-ink py-28 md:py-40 border-t border-hairline"
     >
-      <div className="container-editorial">
-        {/* Header */}
-        <div className="grid grid-cols-12 gap-6 mb-16 md:mb-24">
+      {/* Header stays in container */}
+      <div className="container-editorial mb-10 md:mb-16">
+        <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-3">
             <div className="text-overline text-gold">— 003</div>
           </div>
@@ -136,29 +136,33 @@ export const Categories = () => {
             </h2>
             <div className="mt-10 grid grid-cols-12 gap-6">
               <p className="col-span-12 md:col-span-7 text-bone-dim text-base md:text-lg leading-relaxed">
-                Шесть направлений — от архитектурной верхней одежды до премиального джерси. Работаем с люксовыми тканями: Loro Piana, Drago, итальянский шёлк, шотландский кашемир. Сложные конструкции и деликатные материалы — наша территория. Ниже — примеры изделий нашего производства.
+                Шесть направлений — от архитектурной верхней одежды до премиального трикотажа. Работаем с люксовыми тканями: Loro Piana, Drago, итальянский шёлк, шотландский кашемир. Сложные конструкции и деликатные материалы — наша территория. Ниже — примеры изделий нашего производства.
               </p>
               <div className="col-span-12 md:col-span-4 md:col-start-9">
                 <div className="hairline mb-4" />
                 <div className="text-overline text-bone-dim mb-1">Партии</div>
-                <div className="text-bone text-2xl font-display">от 5 ед.</div>
+                <div className="text-bone text-2xl md:text-3xl font-display">от 5 ед.</div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Grid — 3 per row on desktop */}
+      {/* Full-width grid */}
+      <div className="px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {CATEGORIES.map((c) => (
             <Card key={c.n} c={c} />
           ))}
         </div>
+      </div>
 
-        {/* Footer note */}
-        <div className="mt-16 md:mt-20 grid grid-cols-12 gap-6 items-end">
+      {/* Footer note */}
+      <div className="container-editorial mt-16 md:mt-20">
+        <div className="grid grid-cols-12 gap-6 items-end">
           <div className="col-span-12 md:col-span-6">
             <div className="hairline mb-6" />
-            <p className="text-bone-dim text-base leading-relaxed">
+            <p className="text-bone-dim text-base md:text-lg leading-relaxed">
               Не нашли свою категорию? Мы беремся за нестандартные изделия и капсульные коллекции с особыми требованиями к конструкции.
             </p>
           </div>
