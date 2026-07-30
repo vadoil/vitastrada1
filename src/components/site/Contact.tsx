@@ -41,15 +41,19 @@ export const Contact = () => {
     }
 
     setSubmitting(true);
-    const { error } = await supabase.from("leads").insert({
+    const payload = {
       name: parsed.data.name,
       brand: parsed.data.brand,
       email: parsed.data.email,
       phone: parsed.data.phone || undefined,
       volume: parsed.data.volume || undefined,
       message: parsed.data.message || undefined,
-      consent: true,
-    });
+      source: "site",
+    };
+    const { error } = await supabase.from("leads").insert({ ...payload, consent: true });
+    if (!error) {
+      supabase.functions.invoke("notify-lead", { body: payload });
+    }
     setSubmitting(false);
 
     if (error) {
