@@ -27,7 +27,7 @@ Deno.serve(async (req) => {
     }
 
     const token = Deno.env.get("TELEGRAM_BOT_TOKEN");
-    const chatId = Deno.env.get("TELEGRAM_CHAT_ID");
+    const chatId = Deno.env.get("TELEGRAM_GROUP_CHAT_ID") ?? Deno.env.get("TELEGRAM_CHAT_ID");
     if (!token || !chatId) {
       console.error("Telegram env not configured", { hasToken: !!token, hasChat: !!chatId });
       return new Response(JSON.stringify({ error: "telegram_not_configured" }), {
