@@ -30,7 +30,7 @@ const CATEGORIES: Category[] = [
     tagline: "Итальянский крой",
     items: ["Жакеты", "Брюки палаццо", "Юбки", "Тройки"],
     fabrics: "Шерсть super 130s · Лён · Габардин",
-    image: look5,
+    image: kostyumAsset.url,
   },
   {
     n: "03",
