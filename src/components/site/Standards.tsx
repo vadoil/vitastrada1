@@ -43,11 +43,11 @@ export const Standards = () => {
 
               <div className="absolute bottom-5 left-5 right-5 md:bottom-8 md:left-8 md:right-8 flex items-end justify-between gap-4 min-w-0">
                 <div className="text-overline text-bone">
-                  <div>QC Department</div>
+                  <div>Отдел контроля качества</div>
                   <div className="text-bone-dim mt-1">Поштучный контроль</div>
                 </div>
                 <div className="font-mono text-overline text-gold">
-                  AQL · 1.5
+                  Уровень качества · AQL 1.5
                 </div>
               </div>
             </div>
