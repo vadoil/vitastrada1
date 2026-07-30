@@ -220,6 +220,18 @@
     100% { transform: scaleX(0); transform-origin: right; }
   }
 
+  @keyframes hero-wind {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+    22% { transform: translate3d(-5px, 1px, 0) scale(1.008) rotate(0.18deg); }
+    44% { transform: translate3d(3px, -1px, 0) scale(1.004) rotate(-0.12deg); }
+    66% { transform: translate3d(-4px, 0, 0) scale(1.01) rotate(0.1deg); }
+    88% { transform: translate3d(2px, 1px, 0) scale(1.006) rotate(-0.06deg); }
+  }
+  .animate-hero-wind {
+    animation: hero-wind 11s ease-in-out infinite;
+    will-change: transform;
+  }
+
   /* ───── Golden stitch divider — между секциями ───── */
   .gold-stitch {
     position: relative;

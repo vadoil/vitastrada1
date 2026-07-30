@@ -14,16 +14,20 @@ export const Hero = () => {
       className="relative h-[100svh] min-h-[760px] w-full overflow-hidden bg-wine-deep noise"
     >
       {/* Background — wine silk editorial. Contain on desktop so the whole gown fits. */}
-      <motion.img
-        src={heroImage}
-        alt="Контрактный пошив одежды для премиум-брендов — Nova & Strada, Москва"
-        className="absolute inset-0 h-full w-full object-cover object-[78%_center] md:object-cover md:object-center"
-        width={1920}
-        height={1080}
+      <motion.div
+        className="absolute inset-0"
         initial={{ scale: 1.04, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 2.4, ease }}
-      />
+      >
+        <img
+          src={heroImage}
+          alt="Контрактный пошив одежды для премиум-брендов — Nova & Strada, Москва"
+          width={1920}
+          height={1080}
+          className="h-full w-full object-cover object-[78%_center] md:object-center animate-hero-wind"
+        />
+      </motion.div>
 
       {/* Mobile: subtle wine wash on left so headline reads over silk swirl */}
       <div className="md:hidden absolute inset-0 bg-gradient-to-r from-wine-deep via-wine-deep/55 to-transparent" />
