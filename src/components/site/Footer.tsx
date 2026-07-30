@@ -10,7 +10,7 @@ export const Footer = () => {
               NOVA <span className="text-gold italic">&amp;</span> STRADA
             </div>
             <p className="text-bone-dim text-sm max-w-sm">
-              Контрактное швейное производство премиум-класса. Одежда для брендов и couture для собак. Партии от 5 единиц.
+              Контрактное швейное производство премиум-класса. Одежда для брендов. Партии от 5 единиц.
             </p>
             <p className="text-bone-dim/70 text-xs max-w-sm mt-4 leading-relaxed">
               Производство: Усковский проезд, 2, деревня Голиково, городской округ Химки, Московская область
