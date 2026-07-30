@@ -37,7 +37,7 @@ export const Standards = () => {
                 src={quality}
                 alt="Контроль качества"
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover animate-slow-zoom"
+                className="absolute inset-0 h-full w-full object-cover animate-slow-zoom contrast-[1.15] saturate-[1.08]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
 
