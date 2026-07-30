@@ -90,25 +90,27 @@ export const Patterns = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           {/* LEFT — group switcher + table */}
           <div className="lg:col-span-8 min-w-0">
-            {/* Tabs — vertical stack on mobile, horizontal on desktop */}
+            {/* Tabs — 3 square frames in one row on mobile, horizontal on desktop */}
             <div className="mb-10 md:border-b md:border-hairline">
-              <div className="grid grid-cols-1 sm:grid-cols-3 md:flex md:gap-x-8 md:flex-wrap">
+              <div className="grid grid-cols-3 gap-3 md:flex md:gap-x-8 md:flex-wrap">
                 {GROUPS.map((g, i) => (
                   <button
                     key={g.title}
                     onClick={() => setActive(i)}
-                    className={`text-overline transition-colors duration-300 relative text-left py-4 px-0 md:py-0 md:pb-6 border-b border-hairline md:border-b-0 min-w-0 break-words ${
-                      active === i ? "text-gold" : "text-bone-dim hover:text-bone"
+                    className={`text-[10px] md:text-overline uppercase transition-colors duration-300 relative text-center md:text-left md:py-0 md:pb-6 min-h-[104px] md:min-h-0 flex flex-col items-center justify-center p-2 md:p-0 border md:border-0 md:border-b md:border-hairline ${
+                      active === i
+                        ? "text-gold border-gold md:border-b-gold"
+                        : "text-bone-dim border-hairline hover:text-bone hover:border-bone/30"
                     }`}
                   >
-                    <span className="font-mono text-bone-dim/60 mr-3 md:hidden">
+                    <span className="font-mono text-bone-dim/60 mb-1 md:mb-0 md:mr-3 md:hidden">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    {g.title}
+                    <span className="leading-tight">{g.title}</span>
                     {active === i && (
                       <motion.span
                         layoutId="patterns-tab"
-                        className="absolute left-0 bottom-0 md:-bottom-[1px] h-px bg-gold w-12 md:w-full"
+                        className="hidden md:block absolute left-0 bottom-0 md:-bottom-[1px] h-px bg-gold w-12 md:w-full"
                         transition={{ duration: 0.5, ease }}
                       />
                     )}
