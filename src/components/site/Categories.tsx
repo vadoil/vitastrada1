@@ -1,9 +1,9 @@
-import look1 from "@/assets/look-file-6.jpg.asset.json";
-import look2 from "@/assets/look-file-4.jpg.asset.json";
-import look3 from "@/assets/look-file-3.jpg.asset.json";
-import look4 from "@/assets/look-file-5.jpg.asset.json";
-import look5 from "@/assets/look-file.jpg.asset.json";
-import look6 from "@/assets/look-file-2.jpg.asset.json";
+import look1 from "@/assets/look-file-6.jpg";
+import look2 from "@/assets/look-file-4.jpg";
+import look3 from "@/assets/look-file-3.jpg";
+import look4 from "@/assets/look-file-5.jpg";
+import look5 from "@/assets/look-file.jpg";
+import look6 from "@/assets/look-file-2.jpg";
 
 type Category = {
   n: string;
@@ -21,7 +21,7 @@ const CATEGORIES: Category[] = [
     tagline: "Архитектура силуэта",
     items: ["Пальто oversize", "Тренчи", "Шерстяные жакеты", "Парки", "Жилеты"],
     fabrics: "Шерсть · Кашемир · Loro Piana · Drago",
-    image: look4.url,
+    image: look4,
   },
   {
     n: "02",
@@ -29,7 +29,7 @@ const CATEGORIES: Category[] = [
     tagline: "Итальянский крой",
     items: ["Жакеты", "Брюки палаццо", "Юбки", "Тройки"],
     fabrics: "Шерсть super 130s · Лён · Габардин",
-    image: look5.url,
+    image: look5,
   },
   {
     n: "03",
@@ -37,7 +37,7 @@ const CATEGORIES: Category[] = [
     tagline: "Драпировка и слип",
     items: ["Slip-платья", "Платья-комбинации", "Вечерние", "Платья-рубашки"],
     fabrics: "Натуральный шёлк · Купро · Вискоза премиум",
-    image: look3.url,
+    image: look3,
   },
   {
     n: "04",
@@ -45,7 +45,7 @@ const CATEGORIES: Category[] = [
     tagline: "Ручная вязка и фактура",
     items: ["Свитеры oversize", "Кардиганы", "Водолазки", "Джемперы"],
     fabrics: "Меринос · Кашемир · Альпака",
-    image: look2.url,
+    image: look2,
   },
   {
     n: "05",
@@ -53,7 +53,7 @@ const CATEGORIES: Category[] = [
     tagline: "Мягкая роскошь",
     items: ["Шёлковые блузы", "Поплин", "Туники", "Сорочки"],
     fabrics: "Шёлк-сатин · Хлопок Giza · Лён",
-    image: look6.url,
+    image: look6,
   },
   {
     n: "06",
@@ -61,7 +61,7 @@ const CATEGORIES: Category[] = [
     tagline: "Межсезонье в деталях",
     items: ["Плащи", "Лёгкие пальто", "Ветровки", "Стёганые куртки"],
     fabrics: "Хлопок-твил · Технический нейлон · Шерсть лёгкая",
-    image: look1.url,
+    image: look1,
   },
 ];
 

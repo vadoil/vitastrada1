@@ -1,25 +1,25 @@
-import j1 from "@/assets/journal-1.jpg.asset.json";
-import j2 from "@/assets/journal-2.jpg.asset.json";
-import j3 from "@/assets/journal-3.jpg.asset.json";
+import j1 from "@/assets/journal-1.jpg";
+import j2 from "@/assets/journal-2.jpg";
+import j3 from "@/assets/journal-3.jpg";
 
 const VIDEOS = [
   {
     title: "Пальто-халат: посадка, которая держит форму",
     duration: "06:42",
     chapter: "Эпизод 03",
-    image: j1.url,
+    image: j1,
   },
   {
     title: "Тренч: 42 операции от лекала до готового изделия",
     duration: "11:18",
     chapter: "Эпизод 02",
-    image: j2.url,
+    image: j2,
   },
   {
     title: "Вечернее платье: корсетная основа и работа с шёлком",
     duration: "08:55",
     chapter: "Эпизод 01",
-    image: j3.url,
+    image: j3,
   },
 ];
 
