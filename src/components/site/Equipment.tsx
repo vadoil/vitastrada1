@@ -20,7 +20,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export const Equipment = () => {
   return (
-    <section className="bg-ink-soft py-28 md:py-40 border-t border-hairline">
+    <section className="bg-ink-soft py-20 md:py-28 border-t border-hairline">
       <div className="container-editorial">
         {/* ───────── Header ───────── */}
         <div className="grid grid-cols-12 gap-6 mb-20">

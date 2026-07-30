@@ -122,7 +122,7 @@ export const Categories = () => {
   return (
     <section
       id="capabilities"
-      className="bg-ink py-28 md:py-40 border-t border-hairline"
+      className="bg-ink py-20 md:py-28 border-t border-hairline"
     >
       {/* Header stays in container */}
       <div className="container-editorial mb-10 md:mb-16">

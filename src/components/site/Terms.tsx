@@ -9,7 +9,7 @@ const TERMS = [
 
 export const Terms = () => {
   return (
-    <section className="bg-ink-soft py-28 md:py-40 border-t border-hairline">
+    <section className="bg-ink-soft py-20 md:py-28 border-t border-hairline">
       <div className="container-editorial">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5 min-w-0">
