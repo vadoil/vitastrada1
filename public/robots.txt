@@ -12,8 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
-
-User-agent: *
 Disallow: /admin
 
 Sitemap: https://novastrada.ru/sitemap.xml
