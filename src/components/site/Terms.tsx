@@ -36,14 +36,14 @@ export const Terms = () => {
           </div>
 
           <div className="lg:col-span-7 min-w-0">
-            <div className="border-t border-hairline">
+            <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-0 md:border-t md:border-hairline">
               {TERMS.map((t, i) => (
                 <div
                   key={i}
-                  className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 sm:gap-6 py-6 border-b border-hairline group"
+                  className="flex flex-col justify-between gap-4 md:flex-row md:items-baseline md:justify-between md:gap-6 p-4 md:py-6 border border-hairline md:border-x-0 md:border-t-0 md:border-b group min-h-[120px] md:min-h-0"
                 >
                   <span className="text-bone-dim text-overline shrink-0">{t.label}</span>
-                  <span className="text-bone text-xl sm:text-2xl md:text-3xl font-display sm:text-right break-words min-w-0">
+                  <span className="text-bone text-lg md:text-xl md:text-2xl lg:text-3xl font-display md:text-right break-words min-w-0 mt-auto md:mt-0">
                     {t.value}
                   </span>
                 </div>
