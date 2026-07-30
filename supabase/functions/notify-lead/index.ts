@@ -4,7 +4,7 @@ import { z } from "npm:zod@3";
 const BodySchema = z.object({
   name: z.string().trim().min(1).max(100),
   brand: z.string().trim().max(120).optional().default(""),
-  email: z.string().trim().email().max(255),
+  email: z.string().trim().max(255).optional().default(""),
   phone: z.string().trim().max(40).optional().default(""),
   volume: z.string().trim().max(40).optional().default(""),
   message: z.string().trim().max(2000).optional().default(""),
@@ -45,7 +45,7 @@ Deno.serve(async (req) => {
       "",
       `<b>Имя:</b> ${esc(d.name)}`,
       d.brand ? `<b>Бренд:</b> ${esc(d.brand)}` : "",
-      `<b>E-mail:</b> ${esc(d.email)}`,
+      d.email ? `<b>E-mail:</b> ${esc(d.email)}` : "",
       d.phone ? `<b>Телефон:</b> ${esc(d.phone)}` : "",
       d.volume ? `<b>Объём:</b> ${esc(d.volume)}` : "",
       d.message ? `\n<b>Сообщение:</b>\n${esc(d.message)}` : "",

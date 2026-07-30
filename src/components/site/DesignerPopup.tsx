@@ -108,7 +108,7 @@ export const DesignerPopup = () => {
           <div className="absolute inset-0 bg-ink/80 backdrop-blur-sm" onClick={close} />
 
           <motion.div
-            className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto bg-ink-soft border border-hairline noise"
+            className="relative w-full max-w-xl max-h-[94vh] overflow-y-auto bg-ink-soft border border-hairline noise"
             initial={{ y: 40, opacity: 0, scale: 0.98 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 20, opacity: 0, scale: 0.98 }}
