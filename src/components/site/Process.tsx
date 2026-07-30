@@ -41,19 +41,18 @@ export const Process = () => {
   return (
     <section id="process" className="bg-ink py-20 md:py-28 border-t border-hairline">
       <div className="container-editorial">
-        <div className="grid grid-cols-12 gap-6 mb-20">
-          <div className="col-span-12 md:col-span-3">
-            <div className="text-overline text-gold">— 007</div>
-          </div>
-          <div className="col-span-12 md:col-span-9 flex items-end justify-between flex-wrap gap-6">
-            <h2 className="text-editorial-lg text-bone font-display max-w-3xl">
+        <div className="flex items-end justify-between flex-wrap gap-6 mb-14 md:mb-20">
+          <div>
+            <div className="text-overline text-gold mb-5">— 007</div>
+            <h2 className="text-editorial-lg text-bone font-display">
               Шесть этапов <span className="italic text-bone-dim">от брифа до отгрузки</span>
             </h2>
-            <div className="text-overline text-bone-dim">
-              Цикл · от 30 дней
-            </div>
+          </div>
+          <div className="text-overline text-bone-dim">
+            Цикл · от 30 дней
           </div>
         </div>
+
 
         <div className="border-t border-hairline">
           {STEPS.map((s) => (
