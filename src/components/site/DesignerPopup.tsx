@@ -60,8 +60,6 @@ export const DesignerPopup = () => {
     const fd = new FormData(e.currentTarget);
     const data = {
       name: String(fd.get("name") ?? ""),
-      brand: String(fd.get("brand") ?? ""),
-      email: String(fd.get("email") ?? ""),
       phone: String(fd.get("phone") ?? ""),
       message: String(fd.get("message") ?? ""),
     };
@@ -75,9 +73,8 @@ export const DesignerPopup = () => {
     setSubmitting(true);
     const payload = {
       name: parsed.data.name,
-      brand: parsed.data.brand || undefined,
-      email: parsed.data.email,
-      phone: parsed.data.phone || undefined,
+      email: "",
+      phone: parsed.data.phone,
       volume: "5–30",
       message: parsed.data.message || undefined,
       consent: true,
