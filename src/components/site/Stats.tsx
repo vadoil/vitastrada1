@@ -8,7 +8,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const STATS = [
   { value: 11, suffix: "", label: "лет на рынке", caption: "С 2014 года" },
   { value: 240, suffix: "+", label: "брендов-партнёров", caption: "DTC, ретейл, fashion" },
-  { value: 30, suffix: "", label: "минимальная партия", caption: "Оптимально от 50" },
+  { value: 5, suffix: "", label: "минимальная партия", caption: "Оптимально от 30" },
   { value: 98, suffix: "%", label: "первой годности", caption: "Контроль ОТК" },
 ];
 

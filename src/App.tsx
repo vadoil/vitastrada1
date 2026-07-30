@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import Admin from "./pages/Admin.tsx";
 import { CookieBanner } from "@/components/site/CookieBanner";
+import { DesignerPopup } from "@/components/site/DesignerPopup";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieBanner />
+        <DesignerPopup />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

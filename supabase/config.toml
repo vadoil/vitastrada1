@@ -1,1 +1,7 @@
 project_id = "xbtyxryikmkjklsyvpwp"
+
+[functions.notify-lead]
+verify_jwt = false
+
+[functions.telegram-chat-id]
+verify_jwt = false

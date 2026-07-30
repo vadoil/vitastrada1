@@ -56,19 +56,63 @@ const Privacy = () => {
           </section>
 
           <section>
-            <h2 className="text-overline text-gold mb-3">6. Права пользователя</h2>
+            <h2 className="text-overline text-gold mb-3">6. Права пользователя и отзыв согласия</h2>
             <p>
               Вы вправе запросить удаление, изменение или предоставление информации о
-              ваших персональных данных, отправив запрос на{" "}
-              <a href="mailto:hello@novastrada.ru" className="text-bone link-underline">
-                hello@novastrada.ru
+              ваших персональных данных, а также отозвать согласие на их обработку в
+              любой момент, отправив запрос на{" "}
+              <a href="mailto:vitastrada@mail.ru" className="text-bone link-underline break-all">
+                vitastrada@mail.ru
               </a>
-              .
+              . Запрос рассматривается в течение 30 дней. После отзыва согласия данные
+              удаляются, если иное не предусмотрено законодательством РФ.
             </p>
           </section>
 
           <section>
-            <h2 className="text-overline text-gold mb-3">7. Изменения</h2>
+            <h2 className="text-overline text-gold mb-3">7. Срок хранения</h2>
+            <p>
+              Персональные данные хранятся не дольше, чем этого требуют цели обработки —
+              как правило, не более 3 лет с момента последнего обращения, — после чего
+              уничтожаются или обезличиваются.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-overline text-gold mb-3">8. Меры защиты</h2>
+            <p>
+              Оператор принимает правовые, организационные и технические меры для защиты
+              персональных данных от неправомерного доступа, уничтожения, изменения,
+              копирования и распространения (шифрование канала передачи, разграничение
+              доступа, регламент работы с данными).
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-overline text-gold mb-3">9. Реквизиты Оператора</h2>
+            <div className="space-y-1">
+              <p>Наименование: Nova &amp; Strada (контрактное швейное производство)</p>
+              <p>
+                Адрес производства: Усковский проезд, 2, деревня Голиково, городской округ
+                Химки, Московская область
+              </p>
+              <p>
+                E-mail:{" "}
+                <a href="mailto:vitastrada@mail.ru" className="text-bone link-underline break-all">
+                  vitastrada@mail.ru
+                </a>
+              </p>
+              <p>
+                Телефон:{" "}
+                <a href="tel:+79818334231" className="text-bone link-underline font-mono">
+                  +7 981 833 42 31
+                </a>
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-overline text-gold mb-3">10. Изменения</h2>
             <p>
               Оператор вправе вносить изменения в настоящую Политику. Актуальная
               редакция всегда доступна по адресу /privacy.

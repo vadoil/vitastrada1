@@ -10,7 +10,10 @@ export const Footer = () => {
               NOVA <span className="text-gold italic">&amp;</span> STRADA
             </div>
             <p className="text-bone-dim text-sm max-w-sm">
-              Контрактное швейное производство премиум-класса. Одежда для брендов и couture для собак. Москва.
+              Контрактное швейное производство премиум-класса. Одежда для брендов и couture для собак. Партии от 5 единиц.
+            </p>
+            <p className="text-bone-dim/70 text-xs max-w-sm mt-4 leading-relaxed">
+              Производство: Усковский проезд, 2, деревня Голиково, городской округ Химки, Московская область
             </p>
           </div>
 
@@ -27,8 +30,8 @@ export const Footer = () => {
           <div className="col-span-6 md:col-span-2">
             <div className="text-overline text-bone-dim mb-4">Контакт</div>
             <ul className="space-y-2 text-bone text-sm">
-              <li><a href="mailto:hello@novastrada.ru" className="link-underline">hello@novastrada.ru</a></li>
-              <li><a href="tel:+74950000000" className="link-underline font-mono">+7 495 000 00 00</a></li>
+              <li><a href="mailto:vitastrada@mail.ru" className="link-underline break-all">vitastrada@mail.ru</a></li>
+              <li><a href="tel:+79818334231" className="link-underline font-mono">+7 981 833 42 31</a></li>
             </ul>
           </div>
 
