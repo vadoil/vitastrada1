@@ -93,7 +93,7 @@ export const Hero = () => {
             >
               <StitchIcon className="text-gold" size={48} />
               <div className="text-overline text-gold/90">
-                — 001 · Nova &amp; Strada · Premium Contract Manufacturing
+                — 001 · Nova &amp; Strada · контрактный пошив премиум-класса
               </div>
             </motion.div>
 

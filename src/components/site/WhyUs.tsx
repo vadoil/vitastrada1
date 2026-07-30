@@ -28,7 +28,7 @@ export const WhyUs = () => {
               <div className="relative aspect-[3/4] overflow-hidden">
                 <img
                   src={atelier}
-                  alt="Atelier Noir — production"
+                  alt="Производственный цех Nova & Strada"
                   loading="lazy"
                   className="h-full w-full object-cover animate-slow-zoom"
                 />
@@ -45,8 +45,8 @@ export const WhyUs = () => {
                   <div className="text-overline text-bone-dim mt-1">Доверие</div>
                 </div>
                 <div className="text-overline text-bone-dim text-right">
-                  <div>Hands-on</div>
-                  <div className="text-bone/40 mt-1">production</div>
+                  <div>Ручная</div>
+                  <div className="text-bone/40 mt-1">сборка</div>
                 </div>
               </div>
             </div>

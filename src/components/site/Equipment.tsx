@@ -75,7 +75,7 @@ export const Equipment = () => {
             <div className="col-span-12 lg:col-span-7 p-8 md:p-14 lg:p-16">
               <div className="flex items-center gap-3 text-overline text-gold mb-8">
                 <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
-                <span>iECHO GLSA-2520 · Smart-T · CNC Cutting Lab</span>
+                <span>iECHO GLSA-2520 · Смарт-Т · цех автоматического раскроя</span>
               </div>
 
               <h3 className="text-editorial-lg text-bone font-display leading-[1.02]">
@@ -92,7 +92,7 @@ export const Equipment = () => {
                   "Раскладка с минимальным расходом ткани",
                   "Шёлк, кашемир, кожа, технотекстиль",
                   "Многослойный настил до 75 мм",
-                  "Полная digital-проверка лекал",
+                  "Полная цифровая проверка лекал",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-2">
                     <span className="mt-1.5 h-px w-3 shrink-0 bg-gold" />
@@ -135,7 +135,7 @@ export const Equipment = () => {
                   ))}
                 </div>
                 <div className="mt-8 text-overline text-gold/80">
-                  ◆ CAD → Cutter → Sewing line — без бумаги
+                  ◆ Лекало → раскройный комплекс → швейный поток — без бумаги
                 </div>
               </div>
             </div>
