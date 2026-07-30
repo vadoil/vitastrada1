@@ -126,12 +126,10 @@ export const Categories = () => {
     >
       {/* Header stays in container */}
       <div className="container-editorial mb-10 md:mb-16">
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-12 md:col-span-3">
-            <div className="text-overline text-gold">— 003</div>
-          </div>
-          <div className="col-span-12 md:col-span-9">
-            <h2 className="text-editorial-lg text-bone font-display max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <div className="md:col-span-12">
+            <div className="text-overline text-gold mb-5">— 003</div>
+            <h2 className="text-editorial-lg text-bone font-display">
               Что мы <span className="italic text-gold">шьём</span>
             </h2>
             <div className="mt-10 grid grid-cols-12 gap-6">

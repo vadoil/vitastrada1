@@ -23,19 +23,20 @@ export const Equipment = () => {
     <section className="bg-ink-soft py-20 md:py-28 border-t border-hairline">
       <div className="container-editorial">
         {/* ───────── Header ───────── */}
-        <div className="grid grid-cols-12 gap-6 mb-20">
-          <div className="col-span-12 md:col-span-3">
-            <div className="text-overline text-gold">— 006</div>
-          </div>
-          <div className="col-span-12 md:col-span-9">
-            <h2 className="text-editorial-lg text-bone font-display max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-end mb-14 md:mb-20">
+          <div className="md:col-span-7">
+            <div className="text-overline text-gold mb-5">— 006</div>
+            <h2 className="text-editorial-lg text-bone font-display">
               Оборудование <span className="italic text-gold">класса A</span>
             </h2>
-            <p className="mt-8 max-w-xl text-bone-dim text-lg leading-relaxed">
+          </div>
+          <div className="md:col-span-5">
+            <p className="text-bone-dim text-lg md:text-xl leading-relaxed">
               Японская и немецкая инженерия. Точность настройки до десятых долей миллиметра. Сервис и калибровка — ежемесячно.
             </p>
           </div>
         </div>
+
 
         {/* ───────── HERO: Автоматический раскрой ───────── */}
         <motion.div

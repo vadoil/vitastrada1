@@ -25,16 +25,13 @@ export const Trust = () => {
   return (
     <section className="bg-ink py-20 md:py-28 border-t border-hairline">
       <div className="container-editorial">
-        <div className="grid grid-cols-12 gap-6 mb-20">
-          <div className="col-span-12 md:col-span-3">
-            <div className="text-overline text-gold">— 009</div>
-          </div>
-          <div className="col-span-12 md:col-span-9">
-            <h2 className="text-editorial-lg text-bone font-display max-w-3xl">
-              Доверяют те, для кого <span className="italic text-bone-dim">качество — не опция</span>
-            </h2>
-          </div>
+        <div className="mb-14 md:mb-20">
+          <div className="text-overline text-gold mb-5">— 009</div>
+          <h2 className="text-editorial-lg text-bone font-display">
+            Доверяют те, для кого <span className="italic text-bone-dim">качество — не опция</span>
+          </h2>
         </div>
+
 
         {/* Logos */}
         <div className="grid grid-cols-2 md:grid-cols-6 gap-px bg-hairline border border-hairline mb-20">
