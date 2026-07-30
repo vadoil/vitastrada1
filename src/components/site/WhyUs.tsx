@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import atelier from "@/assets/atelier-hands.jpg";
-import { RotatingBadge } from "@/components/brand/RotatingBadge";
 import { Compass } from "@/components/brand/Compass";
 
 const REASONS = [
@@ -18,67 +16,65 @@ export const WhyUs = () => {
   return (
     <section className="bg-ink-soft relative overflow-hidden">
       {/* Decorative compass */}
-      <Compass className="absolute top-10 right-10 text-gold/30 hidden md:block" size={120} />
+      <Compass className="absolute top-10 right-10 text-gold/20 hidden md:block" size={100} />
 
-      <div className="container-editorial relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12">
-          {/* Left: pinned image — full viewport on desktop, normal stack on mobile */}
-          <div className="lg:col-span-5 min-w-0 lg:sticky lg:top-0 lg:h-screen lg:pt-28">
-            <div className="relative h-[60vh] lg:h-full overflow-hidden">
-              <img
-                src={atelier}
-                alt="Производственный цех Nova & Strada"
-                loading="lazy"
-                className="h-full w-full object-cover animate-slow-zoom"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-ink-soft/60 via-transparent to-ink-soft/20 lg:to-ink-soft/40" />
+      <div className="container-editorial relative py-20 md:py-28">
+        {/* Header */}
+        <div className="mb-12 md:mb-16 lg:mb-20">
+          <motion.div
+            className="text-overline text-gold mb-4"
+            initial={{ opacity: 0, y: -8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease }}
+          >
+            — 004 · Доверие
+          </motion.div>
+          <motion.h2
+            className="text-editorial-lg text-bone font-display max-w-3xl break-words hyphens-auto"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1, ease }}
+          >
+            Почему бренды <span className="italic text-bone-dim">остаются</span> с&nbsp;нами
+          </motion.h2>
+        </div>
 
-              {/* Floating rotating badge */}
-              <RotatingBadge
-                className="absolute bottom-6 right-6 lg:bottom-10 lg:right-10 text-bone bg-ink-soft rounded-full"
-                size={120}
-              />
+        {/* Golden cards grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
+          {REASONS.map((r, i) => (
+            <motion.div
+              key={r.n}
+              className="group relative bg-ink border border-gold/30 p-4 md:p-6 lg:p-8 flex flex-col min-h-[180px] md:min-h-[240px] lg:min-h-[280px] hover:border-gold hover:bg-ink/80 transition-all duration-500"
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: i * 0.08, ease }}
+            >
+              {/* Gold corner accent */}
+              <div className="absolute top-0 left-0 w-6 h-6 md:w-8 md:h-8 border-t border-l border-gold/60 opacity-60 group-hover:opacity-100 group-hover:w-10 group-hover:h-10 transition-all duration-500" />
+              <div className="absolute bottom-0 right-0 w-6 h-6 md:w-8 md:h-8 border-b border-r border-gold/60 opacity-60 group-hover:opacity-100 group-hover:w-10 group-hover:h-10 transition-all duration-500" />
 
-              {/* Caption pinned with the image on desktop */}
-              <div className="absolute bottom-6 left-6 lg:bottom-10 lg:left-10">
-                <div className="text-overline text-bone">— 004 · Доверие</div>
-                <div className="text-overline text-bone-dim mt-1">Ручная сборка</div>
+              {/* Number */}
+              <div className="text-overline text-gold/70 group-hover:text-gold mb-3 md:mb-4 transition-colors duration-500">
+                {r.n}
               </div>
-            </div>
-          </div>
 
-          {/* Right: copy + reasons — scrolls past the image on desktop */}
-          <div className="lg:col-span-7 min-w-0 py-20 md:py-28 lg:pl-20 xl:pl-28">
-            <h2 className="text-editorial-lg text-bone font-display mb-16 lg:mb-24 max-w-2xl break-words hyphens-auto">
-              Почему бренды <span className="italic text-bone-dim">остаются</span> с&nbsp;нами
-            </h2>
+              {/* Title */}
+              <h3 className="text-bone text-sm md:text-lg lg:text-xl font-medium leading-tight mb-2 md:mb-3 group-hover:text-gold transition-colors duration-500 break-words">
+                {r.title}
+              </h3>
 
-            <div className="divide-y divide-hairline border-y border-hairline">
-              {REASONS.map((r, i) => (
-                <motion.div
-                  key={r.n}
-                  className="grid grid-cols-[3rem_minmax(0,1fr)] md:grid-cols-12 gap-x-4 gap-y-2 py-8 md:py-10 group hover:bg-ink/40 transition-colors duration-500 cursor-default"
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: 0.7, delay: i * 0.06, ease }}
-                >
-                  <div className="md:col-span-2 text-overline text-gold flex items-center gap-2 min-w-0">
-                    <span className="inline-block h-px w-3 bg-gold transition-all duration-500 group-hover:w-6" />
-                    {r.n}
-                  </div>
-                  <div className="md:col-span-4 min-w-0">
-                    <h3 className="text-bone text-lg md:text-xl lg:text-2xl break-words transition-transform duration-500 group-hover:translate-x-2">
-                      {r.title}
-                    </h3>
-                  </div>
-                  <p className="col-span-2 md:col-span-6 text-bone-dim text-sm md:text-base lg:text-lg leading-relaxed break-words min-w-0">
-                    {r.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+              {/* Text */}
+              <p className="text-bone-dim text-[0.65rem] md:text-sm lg:text-base leading-relaxed break-words mt-auto">
+                {r.text}
+              </p>
+
+              {/* Subtle gold glow on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
