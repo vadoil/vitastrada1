@@ -16,7 +16,7 @@ apt update && apt install -y curl python3
 ### 2. Креды Я.Диска
 ```bash
 cat > /root/.yandex-webdav <<'EOF'
-vadoil76@gmail.com:smwtcbsrycqkppir
+<LOGIN>:<APP_PASSWORD>
 EOF
 chmod 600 /root/.yandex-webdav
 ```
