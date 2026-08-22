@@ -1,4 +1,4 @@
-import quality from "@/assets/quality.jpg";
+import quality from "@/assets/quality.webp";
 
 const POINTS = [
   { label: "Входной контроль ткани", value: "100% рулонов" },

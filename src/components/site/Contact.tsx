@@ -50,9 +50,9 @@ export const Contact = () => {
       message: parsed.data.message || undefined,
       source: "site",
     };
-    const { error } = await supabase.from("leads").insert({ ...payload, consent: true });
+    const r = await fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...payload, consent: true }) });
+    const error = r.ok ? null : new Error("send failed");
     if (!error) {
-      supabase.functions.invoke("notify-lead", { body: payload });
     }
     setSubmitting(false);
 

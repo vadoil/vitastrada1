@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import j1 from "@/assets/journal-1.jpg";
-import j2 from "@/assets/journal-2.jpg";
-import j3 from "@/assets/journal-3.jpg";
+import j1 from "@/assets/journal-1.webp";
+import j2 from "@/assets/journal-2.webp";
+import j3 from "@/assets/journal-3.webp";
 
 type Item = {
   id: string;

@@ -301,3 +301,25 @@
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
+
+/* Скелетон для изображений */
+@keyframes shimmer-sweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.img-skeleton {
+  overflow: hidden;
+  background: hsl(var(--ink-soft));
+}
+.img-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(var(--gold) / 0.12),
+    transparent
+  );
+  animation: shimmer-sweep 1.9s ease-in-out infinite;
+}

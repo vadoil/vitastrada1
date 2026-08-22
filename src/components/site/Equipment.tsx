@@ -1,5 +1,5 @@
-import machine from "@/assets/machine.jpg";
-import iechoCutter from "@/assets/iecho-cutter.jpg";
+import machine from "@/assets/machine.webp";
+import iechoCutter from "@/assets/iecho-cutter.webp";
 import { motion } from "framer-motion";
 
 const EQUIPMENT = [

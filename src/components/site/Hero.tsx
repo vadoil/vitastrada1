@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-fashion.jpg";
+import heroImage from "@/assets/hero-fashion.webp";
 import { RotatingBadge } from "@/components/brand/RotatingBadge";
 import { PulseDot } from "@/components/brand/PulseDot";
 import { Monogram } from "@/components/brand/Monogram";

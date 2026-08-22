@@ -1,10 +1,11 @@
-import look1 from "@/assets/look-file-6.jpg";
-import look2 from "@/assets/look-file-4.jpg";
-import look3 from "@/assets/look-file-3.jpg";
-import look4 from "@/assets/look-file-5.jpg";
+import look1 from "@/assets/look-file-6.webp";
+import look2 from "@/assets/look-file-4.webp";
+import look3 from "@/assets/look-file-3.webp";
+import look4 from "@/assets/look-file-5.webp";
 
-import look6 from "@/assets/look-file-2.jpg";
-import kostyumPhoto from "@/assets/cat-suiting-photo.jpg";
+import look6 from "@/assets/look-file-2.webp";
+import kostyumPhoto from "@/assets/cat-suiting-photo.webp";
+import { SmartImage } from "@/components/site/SmartImage";
 
 type Category = {
   n: string;
@@ -66,14 +67,34 @@ const CATEGORIES: Category[] = [
   },
 ];
 
+const goToForm = (e: React.MouseEvent, title: string) => {
+  e.preventDefault();
+  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.setTimeout(() => {
+    const ta = document.querySelector<HTMLTextAreaElement>(
+      '#contact textarea[name="message"]'
+    );
+    if (ta && !ta.value.trim()) {
+      ta.value = `Интересует направление: ${title}.`;
+      ta.dispatchEvent(new Event("input", { bubbles: true }));
+    }
+  }, 650);
+};
+
 const Card = ({ c }: { c: Category }) => {
   return (
-    <article className="group relative bg-ink-soft overflow-hidden cursor-pointer h-full min-h-[420px] sm:min-h-[520px] lg:min-h-[640px]">
+    <a
+      href="#contact"
+      onClick={(e) => goToForm(e, c.title)}
+      aria-label={`Оставить заявку: ${c.title}`}
+      className="group relative block bg-ink-soft overflow-hidden cursor-pointer h-full min-h-[420px] sm:min-h-[520px] lg:min-h-[640px] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+    >
       <div className="absolute inset-0 overflow-hidden">
-        <img
+        <SmartImage
           src={c.image}
           alt={`${c.title} — пример изделия NOVA & STRADA`}
-          loading="lazy"
+          loading="eager"
+          decoding="async"
           className="h-full w-full object-cover object-top contrast-[1.18] saturate-[1.08] brightness-[0.96] transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent transition-opacity duration-700" />
@@ -115,7 +136,7 @@ const Card = ({ c }: { c: Category }) => {
           </div>
         </div>
       </div>
-    </article>
+    </a>
   );
 };
 

@@ -42,9 +42,52 @@
         "areaServed": "RU"
       }
     </script>
+      <style>
+      #np-preloader{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;
+        align-items:center;justify-content:center;gap:28px;background:hsl(350 55% 10%);
+        transition:opacity .6s ease,visibility .6s ease}
+      #np-preloader.np-done{opacity:0;visibility:hidden}
+      @keyframes np-spin{to{transform:rotate(360deg)}}
+      @keyframes np-spin-rev{to{transform:rotate(-360deg)}}
+      #np-preloader .np-stitch{transform-origin:50% 50%;animation:np-spin 9s linear infinite}
+      #np-preloader .np-needle{transform-origin:50% 50%;animation:np-spin-rev 2.4s cubic-bezier(.6,.05,.4,.95) infinite}
+      #np-preloader .np-word{font-family:Georgia,'Times New Roman',serif;letter-spacing:.42em;
+        text-transform:uppercase;font-size:11px;color:hsl(40 60% 88%);opacity:.72;padding-left:.42em}
+    </style>
   </head>
 
   <body>
+    <div id="np-preloader" role="status" aria-label="Загрузка">
+      <svg width="86" height="86" viewBox="0 0 100 100" aria-hidden="true">
+        <circle class="np-stitch" cx="50" cy="50" r="34" fill="none"
+          stroke="hsl(42 65% 60%)" stroke-width="1.6" stroke-linecap="round"
+          stroke-dasharray="5 9" opacity=".85"/>
+        <g class="np-needle">
+          <line x1="50" y1="7" x2="50" y2="29" stroke="hsl(40 60% 88%)"
+            stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="50" cy="12.5" rx="1.7" ry="3.2" fill="none"
+            stroke="hsl(40 60% 88%)" stroke-width="1.1"/>
+        </g>
+      </svg>
+      <div class="np-word">Nova &amp; Strada</div>
+    </div>
+    <script>
+      (function () {
+        var t0 = Date.now();
+        function hide() {
+          var el = document.getElementById('np-preloader');
+          if (!el) return;
+          var wait = Math.max(0, 900 - (Date.now() - t0));
+          setTimeout(function () {
+            el.classList.add('np-done');
+            setTimeout(function () { el.remove(); }, 700);
+          }, wait);
+        }
+        window.addEventListener('load', hide);
+        setTimeout(hide, 6000);
+      })();
+    </script>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
